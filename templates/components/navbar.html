@@ -1,0 +1,197 @@
+<!-- =========================================================
+     FORENSIC AI — GLOBAL NAVBAR
+     Digital Forensics Investigation Platform
+     ========================================================= -->
+
+<header class="top-navbar">
+
+    <!-- ================================================
+         LEFT SECTION — BRAND
+    ================================================= -->
+
+    <div class="navbar-left">
+
+        <!-- Mobile Sidebar Toggle -->
+
+        <button
+            class="mobile-menu-btn"
+            id="mobileMenuBtn"
+            type="button"
+            aria-label="Open navigation">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+        <!-- Brand -->
+
+        <a href="{{ url_for('index') }}"
+           class="forensic-brand">
+
+            <div class="brand-symbol">
+
+                <span class="brand-corner corner-tl"></span>
+                <span class="brand-corner corner-tr"></span>
+                <span class="brand-corner corner-bl"></span>
+                <span class="brand-corner corner-br"></span>
+
+                <span class="brand-core">FAI</span>
+
+            </div>
+
+            <div class="brand-text">
+
+                <span class="brand-name">
+                    FORENSIC AI
+                </span>
+
+                <span class="brand-subtitle">
+                    DOCUMENT INTELLIGENCE
+                </span>
+
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <!-- ================================================
+         CENTER SECTION — SYSTEM INFORMATION
+    ================================================= -->
+
+    <div class="navbar-center">
+
+        <div class="system-indicator">
+
+            <span class="status-dot active"></span>
+
+            <span class="system-label">
+                SYSTEM
+            </span>
+
+            <span class="system-status-text">
+                OPERATIONAL
+            </span>
+
+        </div>
+
+
+        <div class="navbar-divider"></div>
+
+
+        <div class="engine-status">
+
+            <span class="engine-icon">
+                ◈
+            </span>
+
+            <span>
+                FORENSIC ENGINE
+            </span>
+
+            <strong>
+                READY
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================
+         RIGHT SECTION
+    ================================================= -->
+
+    <div class="navbar-right">
+
+
+        <!-- Search -->
+
+        <button
+            class="navbar-search"
+            id="navbarSearchBtn"
+            type="button">
+
+            <span class="search-icon">
+                ⌕
+            </span>
+
+            <span class="search-text">
+                Search investigations...
+            </span>
+
+            <kbd>
+                CTRL K
+            </kbd>
+
+        </button>
+
+
+        <!-- Notifications -->
+
+        <button
+            class="navbar-icon-btn"
+            id="notificationBtn"
+            type="button"
+            aria-label="Notifications">
+
+            <span class="notification-icon">
+                ◉
+            </span>
+
+            <span class="notification-dot"></span>
+
+        </button>
+
+
+        <!-- Theme Toggle -->
+
+        <button
+            class="navbar-icon-btn"
+            id="themeToggle"
+            type="button"
+            aria-label="Toggle theme">
+
+            <span>
+                ◐
+            </span>
+
+        </button>
+
+
+        <!-- User -->
+
+        <button
+            class="navbar-user"
+            id="userMenuBtn"
+            type="button">
+
+            <span class="user-avatar">
+                PS
+            </span>
+
+            <span class="user-info">
+
+                <strong>
+                    Investigator
+                </strong>
+
+                <small>
+                    Analyst
+                </small>
+
+            </span>
+
+            <span class="user-arrow">
+                ▾
+            </span>
+
+        </button>
+
+    </div>
+
+</header>

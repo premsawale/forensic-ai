@@ -1,0 +1,809 @@
+/* =========================================================
+   FORENSIC AI — NAVBAR
+   Professional Digital Forensics Interface
+   ========================================================= */
+
+
+/* =========================================================
+   MAIN NAVBAR
+   ========================================================= */
+
+.top-navbar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: var(--z-navbar);
+
+    height: var(--navbar-height);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 var(--space-6);
+
+    background:
+        rgba(5, 7, 13, 0.92);
+
+    border-bottom:
+        1px solid var(--border);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+}
+
+
+/* =========================================================
+   NAVBAR LEFT
+   ========================================================= */
+
+.navbar-left {
+
+    display: flex;
+
+    align-items: center;
+
+    min-width: var(--sidebar-width);
+
+}
+
+
+/* =========================================================
+   FORENSIC BRAND
+   ========================================================= */
+
+.forensic-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--space-3);
+
+    transition:
+        opacity var(--transition-normal);
+
+}
+
+
+.forensic-brand:hover {
+    opacity: 0.85;
+}
+
+
+/* =========================================================
+   BRAND SYMBOL
+   ========================================================= */
+
+.brand-symbol {
+
+    position: relative;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(37, 217, 255, 0.12),
+            rgba(79, 124, 255, 0.05)
+        );
+
+    border:
+        1px solid rgba(37, 217, 255, 0.35);
+
+    box-shadow:
+        var(--glow-cyan);
+
+}
+
+
+/* Brand corner indicators */
+
+.brand-corner {
+
+    position: absolute;
+
+    width: 6px;
+    height: 6px;
+
+    border-color: var(--cyan);
+
+}
+
+
+.corner-tl {
+
+    top: -1px;
+    left: -1px;
+
+    border-top: 2px solid;
+    border-left: 2px solid;
+
+}
+
+
+.corner-tr {
+
+    top: -1px;
+    right: -1px;
+
+    border-top: 2px solid;
+    border-right: 2px solid;
+
+}
+
+
+.corner-bl {
+
+    bottom: -1px;
+    left: -1px;
+
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+
+}
+
+
+.corner-br {
+
+    bottom: -1px;
+    right: -1px;
+
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+
+}
+
+
+/* FAI text */
+
+.brand-core {
+
+    font-family: var(--font-mono);
+
+    font-size: 0.72rem;
+
+    font-weight: var(--weight-bold);
+
+    letter-spacing: -0.05em;
+
+    color: var(--cyan);
+
+}
+
+
+/* =========================================================
+   BRAND TEXT
+   ========================================================= */
+
+.brand-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    line-height: 1;
+
+}
+
+
+.brand-name {
+
+    font-size: 0.88rem;
+
+    font-weight: var(--weight-bold);
+
+    letter-spacing: 0.08em;
+
+    color: var(--text-primary);
+
+}
+
+
+.brand-subtitle {
+
+    margin-top: 5px;
+
+    font-family: var(--font-mono);
+
+    font-size: 0.50rem;
+
+    letter-spacing: 0.10em;
+
+    color: var(--text-muted);
+
+}
+
+
+/* =========================================================
+   CENTER SYSTEM STATUS
+   ========================================================= */
+
+.navbar-center {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--space-4);
+
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+}
+
+
+/* System indicator */
+
+.system-indicator {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    font-family: var(--font-mono);
+
+    font-size: var(--text-xs);
+
+}
+
+
+.system-label {
+
+    color: var(--text-muted);
+
+    letter-spacing: 0.08em;
+
+}
+
+
+.system-status-text {
+
+    color: var(--success);
+
+    font-weight: var(--weight-semibold);
+
+    letter-spacing: 0.05em;
+
+}
+
+
+/* Divider */
+
+.navbar-divider {
+
+    width: 1px;
+
+    height: 20px;
+
+    background: var(--border);
+
+}
+
+
+/* Engine */
+
+.engine-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    font-family: var(--font-mono);
+
+    font-size: 0.65rem;
+
+    color: var(--text-muted);
+
+}
+
+
+.engine-icon {
+
+    color: var(--cyan);
+
+}
+
+
+.engine-status strong {
+
+    color: var(--cyan);
+
+    font-weight: var(--weight-semibold);
+
+}
+
+
+/* =========================================================
+   NAVBAR RIGHT
+   ========================================================= */
+
+.navbar-right {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: var(--space-2);
+
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.navbar-search {
+
+    width: 235px;
+
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--space-2);
+
+    padding: 0 var(--space-3);
+
+    background:
+        rgba(11, 17, 28, 0.75);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius-md);
+
+    color: var(--text-muted);
+
+    transition:
+        border-color var(--transition-normal),
+        background var(--transition-normal),
+        box-shadow var(--transition-normal);
+
+}
+
+
+.navbar-search:hover {
+
+    border-color:
+        var(--border-active);
+
+    background:
+        var(--panel-light);
+
+}
+
+
+.navbar-search:focus,
+.navbar-search:focus-visible {
+
+    border-color:
+        var(--cyan);
+
+    box-shadow:
+        var(--glow-cyan);
+
+}
+
+
+.search-icon {
+
+    font-size: 1.1rem;
+
+    color: var(--cyan);
+
+}
+
+
+.search-text {
+
+    flex: 1;
+
+    text-align: left;
+
+    font-size: var(--text-xs);
+
+    color: var(--text-muted);
+
+}
+
+
+.navbar-search kbd {
+
+    padding: 3px 6px;
+
+    border:
+        1px solid var(--border-light);
+
+    border-radius: 4px;
+
+    background: var(--bg-primary);
+
+    color: var(--text-muted);
+
+    font-family: var(--font-mono);
+
+    font-size: 0.55rem;
+
+}
+
+
+/* =========================================================
+   NAVBAR ICON BUTTON
+   ========================================================= */
+
+.navbar-icon-btn {
+
+    position: relative;
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid transparent;
+
+    border-radius: var(--radius-md);
+
+    background: transparent;
+
+    color: var(--text-secondary);
+
+    transition:
+        color var(--transition-fast),
+        background var(--transition-fast),
+        border-color var(--transition-fast);
+
+}
+
+
+.navbar-icon-btn:hover {
+
+    color: var(--cyan);
+
+    background:
+        rgba(37, 217, 255, 0.06);
+
+    border-color:
+        var(--border);
+
+}
+
+
+/* Notification */
+
+.notification-icon {
+
+    font-size: 0.8rem;
+
+}
+
+
+.notification-dot {
+
+    position: absolute;
+
+    top: 7px;
+    right: 7px;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: var(--danger);
+
+    box-shadow:
+        0 0 7px rgba(255, 92, 112, 0.65);
+
+}
+
+
+/* =========================================================
+   USER MENU
+   ========================================================= */
+
+.navbar-user {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--space-2);
+
+    margin-left: var(--space-2);
+
+    padding: 4px 8px 4px 4px;
+
+    border:
+        1px solid transparent;
+
+    border-radius: var(--radius-md);
+
+    background: transparent;
+
+    color: var(--text-primary);
+
+    transition:
+        background var(--transition-normal),
+        border-color var(--transition-normal);
+
+}
+
+
+.navbar-user:hover {
+
+    background: var(--panel);
+
+    border-color: var(--border);
+
+}
+
+
+/* Avatar */
+
+.user-avatar {
+
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 6px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--cyan-dark)
+        );
+
+    color: white;
+
+    font-family: var(--font-mono);
+
+    font-size: 0.65rem;
+
+    font-weight: var(--weight-bold);
+
+}
+
+
+/* User information */
+
+.user-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    line-height: 1.1;
+
+}
+
+
+.user-info strong {
+
+    font-size: var(--text-xs);
+
+    font-weight: var(--weight-semibold);
+
+}
+
+
+.user-info small {
+
+    margin-top: 3px;
+
+    color: var(--text-muted);
+
+    font-family: var(--font-mono);
+
+    font-size: 0.55rem;
+
+}
+
+
+.user-arrow {
+
+    margin-left: 3px;
+
+    color: var(--text-muted);
+
+    font-size: 0.75rem;
+
+}
+
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+.mobile-menu-btn {
+
+    display: none;
+
+    width: 36px;
+    height: 36px;
+
+    margin-right: var(--space-2);
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    background: transparent;
+
+}
+
+
+.mobile-menu-btn span {
+
+    display: block;
+
+    width: 18px;
+    height: 2px;
+
+    background: var(--text-secondary);
+
+    transition:
+        transform var(--transition-normal),
+        opacity var(--transition-normal);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .navbar-center {
+        display: none;
+    }
+
+    .navbar-search {
+        width: 180px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .top-navbar {
+
+        padding:
+            0 var(--space-3);
+
+    }
+
+
+    .navbar-left {
+
+        min-width: auto;
+
+    }
+
+
+    .mobile-menu-btn {
+
+        display: flex;
+
+    }
+
+
+    .brand-subtitle {
+
+        display: none;
+
+    }
+
+
+    .navbar-search {
+
+        width: 36px;
+
+        padding: 0;
+
+        justify-content: center;
+
+        border-color: transparent;
+
+    }
+
+
+    .search-text,
+    .navbar-search kbd {
+
+        display: none;
+
+    }
+
+
+    .navbar-user .user-info,
+    .user-arrow {
+
+        display: none;
+
+    }
+
+
+    .navbar-user {
+
+        margin-left: 0;
+
+        padding: 3px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .brand-name {
+
+        font-size: 0.78rem;
+
+    }
+
+    .brand-symbol {
+
+        width: 34px;
+        height: 34px;
+
+    }
+
+    .navbar-right {
+
+        gap: 0;
+
+    }
+
+}

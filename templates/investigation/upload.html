@@ -1,0 +1,779 @@
+{% extends "base.html" %}
+
+{% block title %}
+New Investigation | Forensic AI
+{% endblock %}
+
+
+{% block body %}
+
+<div class="investigation-page">
+
+    <!-- =========================================
+         PAGE HEADER
+    ========================================== -->
+
+    <div class="investigation-header">
+
+        <div class="investigation-header-left">
+
+            <div class="breadcrumb">
+                <span>COMMAND CENTER</span>
+                <i class="bi bi-chevron-right"></i>
+                <span>NEW INVESTIGATION</span>
+            </div>
+
+            <h1>
+                <i class="bi bi-fingerprint"></i>
+                New Investigation
+            </h1>
+
+            <p>
+                Upload and prepare digital evidence for forensic analysis.
+            </p>
+
+        </div>
+
+        <div class="engine-status">
+            <span class="status-dot"></span>
+            FORENSIC ENGINE READY
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         INVESTIGATION FORM
+    ========================================== -->
+
+    <form
+        id="investigationForm"
+        action="{{ url_for('start_investigation') }}"
+        method="POST"
+        enctype="multipart/form-data"
+    >
+
+        <!-- =========================================
+             MAIN INVESTIGATION GRID
+        ========================================== -->
+
+        <div class="investigation-grid">
+
+
+            <!-- =====================================
+                 LEFT MAIN CONTENT
+            ====================================== -->
+
+            <div class="investigation-main">
+
+
+                <!-- =================================
+                     INVESTIGATION DETAILS
+                ================================== -->
+
+                <section class="forensic-card">
+
+                    <div class="card-heading">
+
+                        <div class="card-icon">
+                            <i class="bi bi-folder2-open"></i>
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Investigation Details
+                            </h2>
+
+                            <p>
+                                Define the basic information for this case.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <!-- CASE NAME -->
+
+                        <div class="form-group">
+
+                            <label for="caseName">
+
+                                Case Name
+
+                                <span>*</span>
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="caseName"
+                                name="case_name"
+                                placeholder="Enter investigation case name"
+                                autocomplete="off"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- DOCUMENT TYPE -->
+
+                        <div class="form-group">
+
+                            <label for="documentType">
+
+                                Document Type
+
+                                <span>*</span>
+
+                            </label>
+
+                            <select
+                                id="documentType"
+                                name="document_type"
+                                required
+                            >
+
+                                <option value="">
+                                    Select document type
+                                </option>
+
+                                <option value="bonafide">
+                                    Bonafide Certificate
+                                </option>
+
+                                <option value="marksheet">
+                                    Semester Marksheet
+                                </option>
+
+                                <option value="fee_receipt">
+                                    Fee Receipt
+                                </option>
+
+                                <option value="leaving_certificate">
+                                    Leaving Certificate
+                                </option>
+
+                                <option value="degree_certificate">
+                                    Diploma / Degree Certificate
+                                </option>
+
+                                <option value="birth_certificate">
+                                    Birth Certificate
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- INVESTIGATION NOTES -->
+
+                    <div class="form-group">
+
+                        <label for="investigationNotes">
+
+                            Investigation Notes
+
+                            <small>
+                                Optional
+                            </small>
+
+                        </label>
+
+                        <textarea
+                            id="investigationNotes"
+                            name="notes"
+                            rows="4"
+                            placeholder="Add any relevant investigation notes..."
+                        ></textarea>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================
+                     EVIDENCE UPLOAD
+                ================================== -->
+
+                <section class="forensic-card">
+
+                    <div class="card-heading">
+
+                        <div class="card-icon">
+                            <i class="bi bi-cloud-arrow-up"></i>
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Evidence Upload
+                            </h2>
+
+                            <p>
+                                Upload the document you want to investigate.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- UPLOAD ZONE -->
+
+                    <div
+                        class="upload-zone"
+                        id="uploadZone"
+                    >
+
+                        <div class="upload-icon">
+                            <i class="bi bi-file-earmark-arrow-up"></i>
+                        </div>
+
+                        <h3>
+                            Drop evidence here
+                        </h3>
+
+                        <p>
+                            or browse files from your computer
+                        </p>
+
+
+                        <!-- BROWSE BUTTON -->
+
+                        <button
+                            type="button"
+                            class="btn-secondary"
+                            id="browseButton"
+                        >
+
+                            <i class="bi bi-folder2-open"></i>
+
+                            Browse Evidence
+
+                        </button>
+
+
+                        <!-- FILE INPUT -->
+
+                        <input
+                            type="file"
+                            id="evidenceFile"
+                            name="evidence_file"
+                            accept=".pdf,.jpg,.jpeg,.png"
+                            hidden
+                            required
+                        >
+
+
+                        <div class="upload-hint">
+
+                            PDF, JPG, JPEG or PNG
+
+                            <span>·</span>
+
+                            Maximum 20 MB
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         SELECTED FILE
+                    ================================== -->
+
+                    <div
+                        class="selected-file"
+                        id="selectedFile"
+                        style="display: none;"
+                    >
+
+                        <div class="file-icon">
+
+                            <i
+                                class="bi bi-file-earmark"
+                                id="fileIcon"
+                            ></i>
+
+                        </div>
+
+
+                        <div class="file-info">
+
+                            <strong id="fileName">
+                                document.pdf
+                            </strong>
+
+                            <span id="fileSize">
+                                0 MB
+                            </span>
+
+
+                            <div class="file-progress">
+
+                                <div
+                                    class="file-progress-bar"
+                                    id="fileProgress"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="remove-file"
+                            id="removeFile"
+                            title="Remove file"
+                        >
+
+                            <i class="bi bi-x-lg"></i>
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================
+                     EVIDENCE PROTECTION
+                ================================== -->
+
+                <section class="forensic-card">
+
+                    <div class="card-heading">
+
+                        <div class="card-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Evidence Protection
+                            </h2>
+
+                            <p>
+                                Your uploaded evidence is handled in an isolated workflow.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="security-grid">
+
+
+                        <!-- ORIGINAL -->
+
+                        <div class="security-item">
+
+                            <i class="bi bi-lock-fill"></i>
+
+                            <div>
+
+                                <strong>
+                                    Original Preserved
+                                </strong>
+
+                                <span>
+                                    Original evidence remains unchanged.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ISOLATED -->
+
+                        <div class="security-item">
+
+                            <i class="bi bi-box-seam"></i>
+
+                            <div>
+
+                                <strong>
+                                    Isolated Processing
+                                </strong>
+
+                                <span>
+                                    Analysis is performed on a processing copy.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- TRACKING -->
+
+                        <div class="security-item">
+
+                            <i class="bi bi-fingerprint"></i>
+
+                            <div>
+
+                                <strong>
+                                    Evidence Tracking
+                                </strong>
+
+                                <span>
+                                    Each investigation receives a unique ID.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================
+                     FORENSIC ANALYSIS PIPELINE
+                ================================== -->
+
+                <section class="forensic-card">
+
+                    <div class="card-heading">
+
+                        <div class="card-icon">
+                            <i class="bi bi-diagram-3"></i>
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Forensic Analysis Pipeline
+                            </h2>
+
+                            <p>
+                                The document will be evaluated using multiple forensic signals.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="pipeline-grid">
+
+
+                        <!-- ELA -->
+
+                        <div class="pipeline-item">
+
+                            <span>01</span>
+
+                            <i class="bi bi-image"></i>
+
+                            <strong>
+                                ELA
+                            </strong>
+
+                            <small>
+                                Error Level Analysis
+                            </small>
+
+                        </div>
+
+
+                        <!-- OCR -->
+
+                        <div class="pipeline-item">
+
+                            <span>02</span>
+
+                            <i class="bi bi-fonts"></i>
+
+                            <strong>
+                                OCR
+                            </strong>
+
+                            <small>
+                                Text Extraction
+                            </small>
+
+                        </div>
+
+
+                        <!-- LAYOUT -->
+
+                        <div class="pipeline-item">
+
+                            <span>03</span>
+
+                            <i class="bi bi-grid-3x3"></i>
+
+                            <strong>
+                                LAYOUT
+                            </strong>
+
+                            <small>
+                                Template Analysis
+                            </small>
+
+                        </div>
+
+
+                        <!-- VISUAL -->
+
+                        <div class="pipeline-item">
+
+                            <span>04</span>
+
+                            <i class="bi bi-eye"></i>
+
+                            <strong>
+                                VISUAL
+                            </strong>
+
+                            <small>
+                                Visual Inspection
+                            </small>
+
+                        </div>
+
+
+                        <!-- METADATA -->
+
+                        <div class="pipeline-item">
+
+                            <span>05</span>
+
+                            <i class="bi bi-info-circle"></i>
+
+                            <strong>
+                                METADATA
+                            </strong>
+
+                            <small>
+                                Metadata Audit
+                            </small>
+
+                        </div>
+
+
+                        <!-- CONSISTENCY -->
+
+                        <div class="pipeline-item">
+
+                            <span>06</span>
+
+                            <i class="bi bi-check2-square"></i>
+
+                            <strong>
+                                CONSISTENCY
+                            </strong>
+
+                            <small>
+                                Field Validation
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 RIGHT SIDEBAR
+            ====================================== -->
+
+            <aside class="investigation-sidebar">
+
+
+                <!-- INVESTIGATION ID -->
+
+                <div class="forensic-card">
+
+                    <div class="side-heading">
+
+                        <span>
+                            INVESTIGATION ID
+                        </span>
+
+                        <i class="bi bi-fingerprint"></i>
+
+                    </div>
+
+
+                    <div class="investigation-id">
+                        FAI-2026-0001
+                    </div>
+
+
+                    <p class="side-note">
+
+                        This temporary ID will later be generated automatically by the backend.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- SUPPORTED DOCUMENTS -->
+
+                <div class="forensic-card">
+
+                    <div class="side-heading">
+
+                        <span>
+                            SUPPORTED DOCUMENTS
+                        </span>
+
+                        <i class="bi bi-files"></i>
+
+                    </div>
+
+
+                    <ul class="document-list">
+
+                        <li>
+                            <i class="bi bi-file-earmark-text"></i>
+                            Bonafide Certificate
+                        </li>
+
+                        <li>
+                            <i class="bi bi-file-earmark-bar-graph"></i>
+                            Semester Marksheet
+                        </li>
+
+                        <li>
+                            <i class="bi bi-receipt"></i>
+                            Fee Receipt
+                        </li>
+
+                        <li>
+                            <i class="bi bi-file-earmark-text"></i>
+                            Leaving Certificate
+                        </li>
+
+                        <li>
+                            <i class="bi bi-mortarboard"></i>
+                            Diploma / Degree Certificate
+                        </li>
+
+                        <li>
+                            <i class="bi bi-file-earmark-medical"></i>
+                            Birth Certificate
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <!-- EVIDENCE WARNING -->
+
+                <div class="forensic-card sidebar-warning">
+
+                    <i class="bi bi-shield-lock"></i>
+
+                    <h3>
+                        Evidence Protection
+                    </h3>
+
+                    <p>
+                        Never modify the original document after submission.
+                        Forensic analysis should work on a preserved processing copy.
+                    </p>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+
+
+        <!-- =========================================
+             ACTION BAR
+        ========================================== -->
+
+        <div class="investigation-actions">
+
+            <button
+                type="button"
+                class="btn-cancel"
+                onclick="window.location.href='/dashboard'"
+            >
+
+                Cancel
+
+            </button>
+
+
+            <button
+                type="button"
+                class="btn-primary"
+                id="startInvestigation"
+                disabled
+            >
+
+                <i class="bi bi-play-fill"></i>
+
+                Start Investigation
+
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}
+
+
+
+<!-- =========================================
+     PAGE-SPECIFIC CSS
+========================================== -->
+
+{% block styles %}
+
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/pages/investigation.css') }}"
+>
+
+{% endblock %}
+
+
+
+<!-- =========================================
+     PAGE-SPECIFIC JAVASCRIPT
+========================================== -->
+
+{% block scripts %}
+
+<script
+    src="{{ url_for('static', filename='js/pages/upload.js') }}"
+></script>
+
+{% endblock %}

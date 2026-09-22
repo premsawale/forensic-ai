@@ -1,0 +1,37 @@
+{% set badge_status = status|default('unknown')|lower %}
+
+<span class="forensic-status-badge status-{{ badge_status }}">
+
+    <span class="badge-status-dot"></span>
+
+    <span class="badge-status-text">
+
+        {% if badge_status == 'authentic' %}
+            LIKELY AUTHENTIC
+
+        {% elif badge_status == 'suspicious' %}
+            SUSPICIOUS
+
+        {% elif badge_status == 'forged' %}
+            LIKELY FORGED
+
+        {% elif badge_status == 'processing' %}
+            ANALYSIS IN PROGRESS
+
+        {% elif badge_status == 'pending' %}
+            PENDING ANALYSIS
+
+        {% elif badge_status == 'verified' %}
+            VERIFIED
+
+        {% elif badge_status == 'failed' %}
+            ANALYSIS FAILED
+
+        {% else %}
+            {{ status|default('UNKNOWN')|upper }}
+
+        {% endif %}
+
+    </span>
+
+</span>

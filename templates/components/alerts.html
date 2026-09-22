@@ -1,0 +1,56 @@
+{% with messages = get_flashed_messages(with_categories=true) %}
+
+    {% if messages %}
+
+        <div class="forensic-alert-container" id="alertContainer">
+
+            {% for category, message in messages %}
+
+                <div class="forensic-alert alert-{{ category }}"
+                     role="alert">
+
+                    <div class="alert-icon">
+
+                        {% if category == 'success' %}
+                            ✓
+                        {% elif category == 'danger' or category == 'error' %}
+                            !
+                        {% elif category == 'warning' %}
+                            ⚠
+                        {% else %}
+                            i
+                        {% endif %}
+
+                    </div>
+
+                    <div class="alert-content">
+                        <strong>
+                            {% if category == 'success' %}
+                                OPERATION SUCCESS
+                            {% elif category == 'danger' or category == 'error' %}
+                                SECURITY ALERT
+                            {% elif category == 'warning' %}
+                                WARNING
+                            {% else %}
+                                SYSTEM INFORMATION
+                            {% endif %}
+                        </strong>
+
+                        <span>{{ message }}</span>
+                    </div>
+
+                    <button class="alert-close"
+                            type="button"
+                            aria-label="Close notification">
+                        ×
+                    </button>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    {% endif %}
+
+{% endwith %}

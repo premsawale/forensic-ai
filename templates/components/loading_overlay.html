@@ -1,0 +1,318 @@
+<!-- =========================================================
+     FORENSIC AI — ANALYSIS LOADING OVERLAY
+     ========================================================= -->
+
+<div class="forensic-loading-overlay"
+     id="forensicLoadingOverlay"
+     aria-hidden="true">
+
+    <div class="loading-overlay-background"></div>
+
+    <div class="forensic-loader-panel">
+
+        <!-- TOP SYSTEM HEADER -->
+        <div class="loader-system-header">
+
+            <div class="loader-system-left">
+
+                <span class="loader-system-indicator"></span>
+
+                <span class="loader-system-label">
+                    FORENSIC ANALYSIS ENGINE
+                </span>
+
+            </div>
+
+            <div class="loader-case-status">
+                <span class="mono">STATUS:</span>
+                <strong id="loaderStatus">
+                    INITIALIZING
+                </strong>
+            </div>
+
+        </div>
+
+
+        <!-- DOCUMENT SCANNER -->
+        <div class="document-scanner">
+
+            <div class="scanner-grid"></div>
+
+            <div class="scanner-document">
+
+                <div class="document-header-line"></div>
+
+                <div class="document-line line-wide"></div>
+                <div class="document-line line-medium"></div>
+
+                <div class="document-data-row">
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="document-data-row">
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="document-data-row">
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="document-data-row">
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="document-signature"></div>
+
+                <div class="scanner-beam"></div>
+
+            </div>
+
+            <div class="scanner-corner scanner-corner-tl"></div>
+            <div class="scanner-corner scanner-corner-tr"></div>
+            <div class="scanner-corner scanner-corner-bl"></div>
+            <div class="scanner-corner scanner-corner-br"></div>
+
+        </div>
+
+
+        <!-- ANALYSIS TITLE -->
+        <div class="loader-title-section">
+
+            <span class="forensic-eyebrow">
+                MULTIMODAL DOCUMENT ANALYSIS
+            </span>
+
+            <h2 id="loaderMainTitle">
+                ANALYZING DOCUMENT
+            </h2>
+
+            <p id="loaderDescription">
+                Initializing forensic inspection pipeline...
+            </p>
+
+        </div>
+
+
+        <!-- PROGRESS -->
+        <div class="loader-progress-section">
+
+            <div class="loader-progress-header">
+
+                <span>
+                    ANALYSIS PROGRESS
+                </span>
+
+                <strong id="loaderProgressPercent">
+                    0%
+                </strong>
+
+            </div>
+
+            <div class="loader-progress-track">
+
+                <div class="loader-progress-bar"
+                     id="loaderProgressBar">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ANALYSIS PIPELINE -->
+        <div class="analysis-pipeline">
+
+            <!-- PREPROCESSING -->
+            <div class="pipeline-step active"
+                 data-step="preprocessing">
+
+                <div class="pipeline-icon">
+                    01
+                </div>
+
+                <div class="pipeline-info">
+                    <strong>PREPROCESSING</strong>
+                    <span>Image normalization</span>
+                </div>
+
+                <div class="pipeline-status">
+                    ●
+                </div>
+
+            </div>
+
+
+            <!-- OCR -->
+            <div class="pipeline-step"
+                 data-step="ocr">
+
+                <div class="pipeline-icon">
+                    02
+                </div>
+
+                <div class="pipeline-info">
+                    <strong>OCR ENGINE</strong>
+                    <span>Text extraction</span>
+                </div>
+
+                <div class="pipeline-status">
+                    ●
+                </div>
+
+            </div>
+
+
+            <!-- ELA -->
+            <div class="pipeline-step"
+                 data-step="ela">
+
+                <div class="pipeline-icon">
+                    03
+                </div>
+
+                <div class="pipeline-info">
+                    <strong>ELA ANALYSIS</strong>
+                    <span>Compression inspection</span>
+                </div>
+
+                <div class="pipeline-status">
+                    ●
+                </div>
+
+            </div>
+
+
+            <!-- LAYOUT -->
+            <div class="pipeline-step"
+                 data-step="layout">
+
+                <div class="pipeline-icon">
+                    04
+                </div>
+
+                <div class="pipeline-info">
+                    <strong>LAYOUT ANALYSIS</strong>
+                    <span>Template comparison</span>
+                </div>
+
+                <div class="pipeline-status">
+                    ●
+                </div>
+
+            </div>
+
+
+            <!-- VISUAL -->
+            <div class="pipeline-step"
+                 data-step="visual">
+
+                <div class="pipeline-icon">
+                    05
+                </div>
+
+                <div class="pipeline-info">
+                    <strong>VISUAL FORENSICS</strong>
+                    <span>Manipulation indicators</span>
+                </div>
+
+                <div class="pipeline-status">
+                    ●
+                </div>
+
+            </div>
+
+
+            <!-- METADATA -->
+            <div class="pipeline-step"
+                 data-step="metadata">
+
+                <div class="pipeline-icon">
+                    06
+                </div>
+
+                <div class="pipeline-info">
+                    <strong>METADATA</strong>
+                    <span>File information</span>
+                </div>
+
+                <div class="pipeline-status">
+                    ●
+                </div>
+
+            </div>
+
+
+            <!-- AI -->
+            <div class="pipeline-step"
+                 data-step="ai">
+
+                <div class="pipeline-icon">
+                    07
+                </div>
+
+                <div class="pipeline-info">
+                    <strong>AI FUSION</strong>
+                    <span>Multimodal assessment</span>
+                </div>
+
+                <div class="pipeline-status">
+                    ●
+                </div>
+
+            </div>
+
+
+            <!-- FINAL -->
+            <div class="pipeline-step"
+                 data-step="final">
+
+                <div class="pipeline-icon">
+                    08
+                </div>
+
+                <div class="pipeline-info">
+                    <strong>FINAL REPORT</strong>
+                    <span>Generating findings</span>
+                </div>
+
+                <div class="pipeline-status">
+                    ●
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER INFORMATION -->
+        <div class="loader-footer">
+
+            <div class="loader-secure">
+
+                <span class="secure-icon">◆</span>
+
+                <span>
+                    SECURE FORENSIC ENVIRONMENT
+                </span>
+
+            </div>
+
+            <div class="loader-id">
+
+                <span>ENGINE</span>
+
+                <strong class="mono">
+                    FAI-CORE-01
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

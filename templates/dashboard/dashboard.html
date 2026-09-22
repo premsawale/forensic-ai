@@ -1,0 +1,784 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard | Forensic AI{% endblock %}
+
+{% block styles %}
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/pages/dashboard.css') }}">
+
+{% endblock %}
+
+
+{% block body %}
+
+<section class="dashboard-page">
+
+    <!-- =====================================================
+         DASHBOARD HEADER
+         ===================================================== -->
+
+    <div class="dashboard-header">
+
+        <div>
+
+            <div class="technical-label">
+                FORENSIC COMMAND CENTER
+            </div>
+
+            <h1>
+                Investigation Dashboard
+            </h1>
+
+            <p>
+                Monitor document investigations, forensic signals
+                and system activity from one workspace.
+            </p>
+
+        </div>
+
+
+        <div class="dashboard-actions">
+
+            <div class="system-status">
+
+                <span class="status-dot"></span>
+
+                <div>
+                    <strong>SYSTEM OPERATIONAL</strong>
+                    <small>FAI CORE ONLINE</small>
+                </div>
+
+            </div>
+
+
+            <a href="#"
+               class="btn btn-primary new-investigation-btn">
+
+                <span>＋ NEW INVESTIGATION</span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         STATISTICS
+         ===================================================== -->
+
+    <div class="dashboard-stats">
+
+
+        <!-- TOTAL INVESTIGATIONS -->
+
+        <div class="stat-card">
+
+            <div class="stat-top">
+
+                <span class="stat-label">
+                    TOTAL INVESTIGATIONS
+                </span>
+
+                <span class="stat-icon">
+                    ◈
+                </span>
+
+            </div>
+
+            <div class="stat-value">
+                128
+            </div>
+
+            <div class="stat-bottom">
+
+                <span class="stat-positive">
+                    ↑ 12.8%
+                </span>
+
+                <span>
+                    vs previous period
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ANALYZED -->
+
+        <div class="stat-card">
+
+            <div class="stat-top">
+
+                <span class="stat-label">
+                    DOCUMENTS ANALYZED
+                </span>
+
+                <span class="stat-icon">
+                    ⌬
+                </span>
+
+            </div>
+
+            <div class="stat-value">
+                96
+            </div>
+
+            <div class="stat-bottom">
+
+                <span class="stat-positive">
+                    ↑ 8.4%
+                </span>
+
+                <span>
+                    analysis completed
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- SUSPICIOUS -->
+
+        <div class="stat-card stat-warning">
+
+            <div class="stat-top">
+
+                <span class="stat-label">
+                    SUSPICIOUS
+                </span>
+
+                <span class="stat-icon">
+                    !
+                </span>
+
+            </div>
+
+            <div class="stat-value">
+                21
+            </div>
+
+            <div class="stat-bottom">
+
+                <span class="stat-warning-text">
+                    16.4%
+                </span>
+
+                <span>
+                    flagged documents
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- FORGED -->
+
+        <div class="stat-card stat-danger">
+
+            <div class="stat-top">
+
+                <span class="stat-label">
+                    LIKELY FORGED
+                </span>
+
+                <span class="stat-icon">
+                    ×
+                </span>
+
+            </div>
+
+            <div class="stat-value">
+                11
+            </div>
+
+            <div class="stat-bottom">
+
+                <span class="stat-danger-text">
+                    8.6%
+                </span>
+
+                <span>
+                    high-risk cases
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         MAIN DASHBOARD GRID
+         ===================================================== -->
+
+    <div class="dashboard-grid">
+
+
+        <!-- =================================================
+             RISK DISTRIBUTION
+             ================================================= -->
+
+        <div class="dashboard-card risk-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <span class="technical-label">
+                        CASE ANALYTICS
+                    </span>
+
+                    <h3>
+                        Risk Distribution
+                    </h3>
+
+                </div>
+
+                <button class="card-menu">
+                    ⋮
+                </button>
+
+            </div>
+
+
+            <div class="risk-content">
+
+
+                <div class="risk-chart">
+
+                    <div class="donut">
+
+                        <div class="donut-center">
+
+                            <strong>
+                                128
+                            </strong>
+
+                            <span>
+                                CASES
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="risk-legend">
+
+                    <div class="legend-item">
+
+                        <span class="legend-indicator authentic"></span>
+
+                        <div>
+                            <strong>Likely Authentic</strong>
+                            <small>96 documents</small>
+                        </div>
+
+                        <b>75%</b>
+
+                    </div>
+
+
+                    <div class="legend-item">
+
+                        <span class="legend-indicator suspicious"></span>
+
+                        <div>
+                            <strong>Suspicious</strong>
+                            <small>21 documents</small>
+                        </div>
+
+                        <b>16%</b>
+
+                    </div>
+
+
+                    <div class="legend-item">
+
+                        <span class="legend-indicator forged"></span>
+
+                        <div>
+                            <strong>Likely Forged</strong>
+                            <small>11 documents</small>
+                        </div>
+
+                        <b>9%</b>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             RECENT INVESTIGATIONS
+             ================================================= -->
+
+        <div class="dashboard-card recent-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <span class="technical-label">
+                        INVESTIGATION LOG
+                    </span>
+
+                    <h3>
+                        Recent Investigations
+                    </h3>
+
+                </div>
+
+                <a href="#"
+                   class="view-all">
+                    VIEW ALL →
+                </a>
+
+            </div>
+
+
+            <div class="investigation-list">
+
+
+                <!-- CASE 01 -->
+
+                <div class="investigation-item">
+
+                    <div class="case-icon">
+                        DOC
+                    </div>
+
+                    <div class="case-info">
+
+                        <strong>
+                            Semester Marksheet
+                        </strong>
+
+                        <span>
+                            CASE #FAI-00128
+                        </span>
+
+                    </div>
+
+                    <div class="case-status suspicious">
+                        SUSPICIOUS
+                    </div>
+
+                    <div class="case-time">
+                        12 min ago
+                    </div>
+
+                </div>
+
+
+                <!-- CASE 02 -->
+
+                <div class="investigation-item">
+
+                    <div class="case-icon">
+                        PDF
+                    </div>
+
+                    <div class="case-info">
+
+                        <strong>
+                            Bonafide Certificate
+                        </strong>
+
+                        <span>
+                            CASE #FAI-00127
+                        </span>
+
+                    </div>
+
+                    <div class="case-status authentic">
+                        AUTHENTIC
+                    </div>
+
+                    <div class="case-time">
+                        34 min ago
+                    </div>
+
+                </div>
+
+
+                <!-- CASE 03 -->
+
+                <div class="investigation-item">
+
+                    <div class="case-icon">
+                        DOC
+                    </div>
+
+                    <div class="case-info">
+
+                        <strong>
+                            Fee Receipt
+                        </strong>
+
+                        <span>
+                            CASE #FAI-00126
+                        </span>
+
+                    </div>
+
+                    <div class="case-status forged">
+                        HIGH RISK
+                    </div>
+
+                    <div class="case-time">
+                        1 hr ago
+                    </div>
+
+                </div>
+
+
+                <!-- CASE 04 -->
+
+                <div class="investigation-item">
+
+                    <div class="case-icon">
+                        PDF
+                    </div>
+
+                    <div class="case-info">
+
+                        <strong>
+                            Leaving Certificate
+                        </strong>
+
+                        <span>
+                            CASE #FAI-00125
+                        </span>
+
+                    </div>
+
+                    <div class="case-status authentic">
+                        AUTHENTIC
+                    </div>
+
+                    <div class="case-time">
+                        2 hrs ago
+                    </div>
+
+                </div>
+
+
+                <!-- CASE 05 -->
+
+                <div class="investigation-item">
+
+                    <div class="case-icon">
+                        IMG
+                    </div>
+
+                    <div class="case-info">
+
+                        <strong>
+                            Birth Certificate
+                        </strong>
+
+                        <span>
+                            CASE #FAI-00124
+                        </span>
+
+                    </div>
+
+                    <div class="case-status suspicious">
+                        SUSPICIOUS
+                    </div>
+
+                    <div class="case-time">
+                        3 hrs ago
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         FORENSIC MODULES
+         ===================================================== -->
+
+    <div class="dashboard-card modules-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <span class="technical-label">
+                    ANALYSIS ENGINE
+                </span>
+
+                <h3>
+                    Forensic Modules
+                </h3>
+
+            </div>
+
+            <span class="engine-status">
+                ● ALL MODULES READY
+            </span>
+
+        </div>
+
+
+        <div class="modules-grid">
+
+
+            <!-- ELA -->
+
+            <div class="module-item">
+
+                <div class="module-icon">
+                    ELA
+                </div>
+
+                <div class="module-info">
+
+                    <strong>
+                        Error Level Analysis
+                    </strong>
+
+                    <span>
+                        Image compression analysis
+                    </span>
+
+                </div>
+
+                <span class="module-ready">
+                    READY
+                </span>
+
+            </div>
+
+
+            <!-- OCR -->
+
+            <div class="module-item">
+
+                <div class="module-icon">
+                    OCR
+                </div>
+
+                <div class="module-info">
+
+                    <strong>
+                        Transformer OCR
+                    </strong>
+
+                    <span>
+                        Text and field extraction
+                    </span>
+
+                </div>
+
+                <span class="module-ready">
+                    READY
+                </span>
+
+            </div>
+
+
+            <!-- LAYOUT -->
+
+            <div class="module-item">
+
+                <div class="module-icon">
+                    LYT
+                </div>
+
+                <div class="module-info">
+
+                    <strong>
+                        Layout Analysis
+                    </strong>
+
+                    <span>
+                        Template and alignment check
+                    </span>
+
+                </div>
+
+                <span class="module-ready">
+                    READY
+                </span>
+
+            </div>
+
+
+            <!-- VISUAL -->
+
+            <div class="module-item">
+
+                <div class="module-icon">
+                    VIS
+                </div>
+
+                <div class="module-info">
+
+                    <strong>
+                        Visual Forensics
+                    </strong>
+
+                    <span>
+                        Font and image analysis
+                    </span>
+
+                </div>
+
+                <span class="module-ready">
+                    READY
+                </span>
+
+            </div>
+
+
+            <!-- METADATA -->
+
+            <div class="module-item">
+
+                <div class="module-icon">
+                    META
+                </div>
+
+                <div class="module-info">
+
+                    <strong>
+                        Metadata Analysis
+                    </strong>
+
+                    <span>
+                        File and creation metadata
+                    </span>
+
+                </div>
+
+                <span class="module-ready">
+                    READY
+                </span>
+
+            </div>
+
+
+            <!-- CONSISTENCY -->
+
+            <div class="module-item">
+
+                <div class="module-icon">
+                    CON
+                </div>
+
+                <div class="module-info">
+
+                    <strong>
+                        Consistency Engine
+                    </strong>
+
+                    <span>
+                        Cross-field validation
+                    </span>
+
+                </div>
+
+                <span class="module-ready">
+                    READY
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         DOCUMENT TYPES
+         ===================================================== -->
+
+    <div class="document-types-section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="technical-label">
+                    SUPPORTED EVIDENCE
+                </span>
+
+                <h2>
+                    Document Intelligence
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="document-type-grid">
+
+            <div class="document-type-card">
+                <span>01</span>
+                <strong>Bonafide Certificate</strong>
+                <small>Academic verification</small>
+            </div>
+
+            <div class="document-type-card">
+                <span>02</span>
+                <strong>Semester Marksheet</strong>
+                <small>Academic records</small>
+            </div>
+
+            <div class="document-type-card">
+                <span>03</span>
+                <strong>Fee Receipt</strong>
+                <small>Financial evidence</small>
+            </div>
+
+            <div class="document-type-card">
+                <span>04</span>
+                <strong>Leaving Certificate</strong>
+                <small>Institution records</small>
+            </div>
+
+            <div class="document-type-card">
+                <span>05</span>
+                <strong>Degree Certificate</strong>
+                <small>Qualification evidence</small>
+            </div>
+
+            <div class="document-type-card">
+                <span>06</span>
+                <strong>Birth Certificate</strong>
+                <small>Identity evidence</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

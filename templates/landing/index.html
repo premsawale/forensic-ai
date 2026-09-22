@@ -1,0 +1,1040 @@
+{% extends "base.html" %}
+
+{% block title %}
+Forensic AI | Digital Document Forensics
+{% endblock %}
+
+
+{% block sidebar %}
+{% endblock %}
+
+
+{% block styles %}
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/pages/landing.css') }}">
+
+{% endblock %}
+
+
+{% block body %}
+
+...
+
+<!-- =========================================================
+     FORENSIC AI — LANDING PAGE
+     ========================================================= -->
+
+<div class="landing-page">
+
+
+    <!-- =====================================================
+         HERO SECTION
+         ===================================================== -->
+
+    <section class="forensic-hero">
+
+        <div class="hero-grid"></div>
+
+        <div class="hero-glow hero-glow-one"></div>
+        <div class="hero-glow hero-glow-two"></div>
+
+
+        <div class="hero-content">
+
+            <!-- SYSTEM LABEL -->
+
+            <div class="hero-system-label">
+
+                <span class="status-dot active"></span>
+
+                <span>
+                    FORENSIC AI CORE
+                </span>
+
+                <span class="hero-system-divider"></span>
+
+                <span class="hero-operational">
+                    OPERATIONAL
+                </span>
+
+            </div>
+
+
+            <!-- MAIN HEADING -->
+
+            <div class="hero-heading">
+
+                <span class="hero-eyebrow">
+                    MULTIMODAL DOCUMENT INTELLIGENCE
+                </span>
+
+                <h1>
+                    Detect.
+                    <span>Analyze.</span>
+                    Verify.
+                </h1>
+
+                <p>
+                    An AI-powered digital forensic platform for
+                    detecting document manipulation, extracting
+                    evidence, comparing trusted layouts and
+                    generating explainable verification findings.
+                </p>
+
+            </div>
+
+
+            <!-- ACTIONS -->
+
+            <div class="hero-actions">
+
+                <a
+                    href="{{ url_for('new_investigation') }}"
+                    class="forensic-btn forensic-btn-primary">
+
+                    <span class="btn-icon">+</span>
+
+                    START INVESTIGATION
+
+                    <span class="btn-arrow">→</span>
+
+                </a>
+
+
+                <a
+                    href="#capabilities"
+                    class="forensic-btn forensic-btn-secondary">
+
+                    EXPLORE FORENSIC TOOLS
+
+                </a>
+
+            </div>
+
+
+            <!-- QUICK METRICS -->
+
+            <div class="hero-metrics">
+
+                <div class="hero-metric">
+
+                    <strong>
+                        06
+                    </strong>
+
+                    <span>
+                        DOCUMENT TYPES
+                    </span>
+
+                </div>
+
+
+                <div class="hero-metric-divider"></div>
+
+
+                <div class="hero-metric">
+
+                    <strong>
+                        07+
+                    </strong>
+
+                    <span>
+                        FORENSIC SIGNALS
+                    </span>
+
+                </div>
+
+
+                <div class="hero-metric-divider"></div>
+
+
+                <div class="hero-metric">
+
+                    <strong>
+                        AI
+                    </strong>
+
+                    <span>
+                        MULTIMODAL FUSION
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             FORENSIC VISUAL CONSOLE
+             ================================================= -->
+
+        <div class="hero-console">
+
+            <div class="console-header">
+
+                <div class="console-title">
+
+                    <span class="console-dot"></span>
+
+                    <span>
+                        LIVE FORENSIC CONSOLE
+                    </span>
+
+                </div>
+
+                <span class="console-id">
+                    FAI-CONSOLE-01
+                </span>
+
+            </div>
+
+
+            <div class="console-body">
+
+
+                <!-- DOCUMENT PREVIEW -->
+
+                <div class="console-document-area">
+
+                    <div class="console-document">
+
+                        <div class="doc-top">
+
+                            <span></span>
+
+                            <span></span>
+
+                            <span></span>
+
+                        </div>
+
+
+                        <div class="doc-heading-line"></div>
+
+                        <div class="doc-subheading-line"></div>
+
+
+                        <div class="doc-row">
+
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                        <div class="doc-row">
+
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                        <div class="doc-row">
+
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                        <div class="doc-row">
+
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+
+                        <div class="doc-table">
+
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+
+                        </div>
+
+
+                        <div class="doc-signature"></div>
+
+
+                        <div class="document-scan-beam"></div>
+
+                    </div>
+
+
+                    <!-- SCAN CORNERS -->
+
+                    <span class="scan-corner scan-tl"></span>
+                    <span class="scan-corner scan-tr"></span>
+                    <span class="scan-corner scan-bl"></span>
+                    <span class="scan-corner scan-br"></span>
+
+                </div>
+
+
+                <!-- CONSOLE DATA -->
+
+                <div class="console-data">
+
+                    <div class="console-data-header">
+
+                        <span>
+                            ANALYSIS SIGNALS
+                        </span>
+
+                        <span class="live-indicator">
+                            ● LIVE
+                        </span>
+
+                    </div>
+
+
+                    <div class="signal-row">
+
+                        <div class="signal-name">
+                            ELA
+                        </div>
+
+                        <div class="signal-bar">
+                            <span style="width: 82%;"></span>
+                        </div>
+
+                        <strong>
+                            82
+                        </strong>
+
+                    </div>
+
+
+                    <div class="signal-row">
+
+                        <div class="signal-name">
+                            OCR
+                        </div>
+
+                        <div class="signal-bar">
+                            <span style="width: 94%;"></span>
+                        </div>
+
+                        <strong>
+                            94
+                        </strong>
+
+                    </div>
+
+
+                    <div class="signal-row">
+
+                        <div class="signal-name">
+                            LAYOUT
+                        </div>
+
+                        <div class="signal-bar">
+                            <span style="width: 76%;"></span>
+                        </div>
+
+                        <strong>
+                            76
+                        </strong>
+
+                    </div>
+
+
+                    <div class="signal-row">
+
+                        <div class="signal-name">
+                            VISUAL
+                        </div>
+
+                        <div class="signal-bar">
+                            <span style="width: 88%;"></span>
+                        </div>
+
+                        <strong>
+                            88
+                        </strong>
+
+                    </div>
+
+
+                    <div class="signal-row">
+
+                        <div class="signal-name">
+                            METADATA
+                        </div>
+
+                        <div class="signal-bar">
+                            <span style="width: 67%;"></span>
+                        </div>
+
+                        <strong>
+                            67
+                        </strong>
+
+                    </div>
+
+
+                    <div class="console-divider"></div>
+
+
+                    <div class="console-result">
+
+                        <div>
+
+                            <span>
+                                CURRENT ASSESSMENT
+                            </span>
+
+                            <strong>
+                                ANALYSIS READY
+                            </strong>
+
+                        </div>
+
+                        <div class="result-indicator">
+                            ◈
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="console-footer">
+
+                <span>
+                    SECURE ANALYSIS ENVIRONMENT
+                </span>
+
+                <span class="mono">
+                    ENCRYPTED
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CAPABILITIES
+         ===================================================== -->
+
+    <section
+        class="landing-section"
+        id="capabilities">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-eyebrow">
+                    FORENSIC TOOLKIT / 01
+                </span>
+
+                <h2>
+                    MULTI-LAYERED
+                    <span>ANALYSIS</span>
+                </h2>
+
+            </div>
+
+            <p>
+                Multiple forensic signals are examined together
+                to identify inconsistencies that may indicate
+                document manipulation.
+            </p>
+
+        </div>
+
+
+        <div class="capability-grid">
+
+
+            <article class="capability-card">
+
+                <div class="capability-number">
+                    01
+                </div>
+
+                <div class="capability-icon ela-icon">
+                    E
+                </div>
+
+                <h3>
+                    ELA ANALYSIS
+                </h3>
+
+                <p>
+                    Error Level Analysis highlights compression
+                    inconsistencies and regions that deserve
+                    further forensic inspection.
+                </p>
+
+                <span class="capability-tag">
+                    IMAGE FORENSICS
+                </span>
+
+            </article>
+
+
+            <article class="capability-card">
+
+                <div class="capability-number">
+                    02
+                </div>
+
+                <div class="capability-icon ocr-icon">
+                    O
+                </div>
+
+                <h3>
+                    TRANSFORMER OCR
+                </h3>
+
+                <p>
+                    Extract document text and structured fields
+                    for downstream validation and consistency
+                    analysis.
+                </p>
+
+                <span class="capability-tag">
+                    TEXT INTELLIGENCE
+                </span>
+
+            </article>
+
+
+            <article class="capability-card">
+
+                <div class="capability-number">
+                    03
+                </div>
+
+                <div class="capability-icon layout-icon">
+                    L
+                </div>
+
+                <h3>
+                    LAYOUT COMPARISON
+                </h3>
+
+                <p>
+                    Compare document geometry, regions and
+                    structural patterns against trusted reference
+                    templates.
+                </p>
+
+                <span class="capability-tag">
+                    TEMPLATE FORENSICS
+                </span>
+
+            </article>
+
+
+            <article class="capability-card">
+
+                <div class="capability-number">
+                    04
+                </div>
+
+                <div class="capability-icon visual-icon">
+                    V
+                </div>
+
+                <h3>
+                    VISUAL FORENSICS
+                </h3>
+
+                <p>
+                    Inspect typography, alignment, image regions
+                    and visual anomalies that may indicate editing.
+                </p>
+
+                <span class="capability-tag">
+                    VISUAL ANALYSIS
+                </span>
+
+            </article>
+
+
+            <article class="capability-card">
+
+                <div class="capability-number">
+                    05
+                </div>
+
+                <div class="capability-icon metadata-icon">
+                    M
+                </div>
+
+                <h3>
+                    METADATA ANALYSIS
+                </h3>
+
+                <p>
+                    Examine available file properties, timestamps,
+                    software information and other metadata signals.
+                </p>
+
+                <span class="capability-tag">
+                    FILE INTELLIGENCE
+                </span>
+
+            </article>
+
+
+            <article class="capability-card">
+
+                <div class="capability-number">
+                    06
+                </div>
+
+                <div class="capability-icon ai-icon">
+                    AI
+                </div>
+
+                <h3>
+                    MULTIMODAL AI FUSION
+                </h3>
+
+                <p>
+                    Combine multiple forensic signals into an
+                    evidence-based assessment with confidence
+                    indicators.
+                </p>
+
+                <span class="capability-tag">
+                    AI INTELLIGENCE
+                </span>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SUPPORTED DOCUMENTS
+         ===================================================== -->
+
+    <section
+        class="landing-section documents-section"
+        id="documents">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-eyebrow">
+                    DOCUMENT INTELLIGENCE / 02
+                </span>
+
+                <h2>
+                    SUPPORTED
+                    <span>DOCUMENTS</span>
+                </h2>
+
+            </div>
+
+            <p>
+                The current research scope focuses on academic,
+                educational and identity-related documents.
+            </p>
+
+        </div>
+
+
+        <div class="document-types-grid">
+
+
+            <div class="document-type-card">
+
+                <span class="document-index">
+                    DOC-01
+                </span>
+
+                <div class="document-type-icon">
+                    BC
+                </div>
+
+                <h3>
+                    BONAFIDE CERTIFICATE
+                </h3>
+
+                <span>
+                    Academic verification
+                </span>
+
+            </div>
+
+
+            <div class="document-type-card">
+
+                <span class="document-index">
+                    DOC-02
+                </span>
+
+                <div class="document-type-icon">
+                    MS
+                </div>
+
+                <h3>
+                    SEMESTER MARKSHEET
+                </h3>
+
+                <span>
+                    Academic records
+                </span>
+
+            </div>
+
+
+            <div class="document-type-card">
+
+                <span class="document-index">
+                    DOC-03
+                </span>
+
+                <div class="document-type-icon">
+                    FR
+                </div>
+
+                <h3>
+                    FEE RECEIPT
+                </h3>
+
+                <span>
+                    Financial records
+                </span>
+
+            </div>
+
+
+            <div class="document-type-card">
+
+                <span class="document-index">
+                    DOC-04
+                </span>
+
+                <div class="document-type-icon">
+                    LC
+                </div>
+
+                <h3>
+                    LEAVING CERTIFICATE
+                </h3>
+
+                <span>
+                    Academic records
+                </span>
+
+            </div>
+
+
+            <div class="document-type-card">
+
+                <span class="document-index">
+                    DOC-05
+                </span>
+
+                <div class="document-type-icon">
+                    DC
+                </div>
+
+                <h3>
+                    DEGREE / DIPLOMA
+                </h3>
+
+                <span>
+                    Qualification records
+                </span>
+
+            </div>
+
+
+            <div class="document-type-card">
+
+                <span class="document-index">
+                    DOC-06
+                </span>
+
+                <div class="document-type-icon">
+                    BC
+                </div>
+
+                <h3>
+                    BIRTH CERTIFICATE
+                </h3>
+
+                <span>
+                    Identity records
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         WORKFLOW
+         ===================================================== -->
+
+    <section
+        class="landing-section workflow-section"
+        id="investigation">
+
+        <div class="section-heading centered-heading">
+
+            <span class="section-eyebrow">
+                INVESTIGATION PIPELINE / 03
+            </span>
+
+            <h2>
+                FROM DOCUMENT
+                <span>TO EVIDENCE</span>
+            </h2>
+
+            <p>
+                A structured forensic pipeline transforms an
+                uploaded document into interpretable analysis
+                findings.
+            </p>
+
+        </div>
+
+
+        <div class="workflow-track">
+
+
+            <div class="workflow-step">
+
+                <span class="workflow-number">
+                    01
+                </span>
+
+                <div class="workflow-line"></div>
+
+                <h3>
+                    UPLOAD
+                </h3>
+
+                <p>
+                    Submit a supported document for investigation.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+                <span class="workflow-number">
+                    02
+                </span>
+
+                <div class="workflow-line"></div>
+
+                <h3>
+                    EXTRACT
+                </h3>
+
+                <p>
+                    Convert and preprocess the document for analysis.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+                <span class="workflow-number">
+                    03
+                </span>
+
+                <div class="workflow-line"></div>
+
+                <h3>
+                    ANALYZE
+                </h3>
+
+                <p>
+                    Run OCR, ELA, layout, visual and metadata checks.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+                <span class="workflow-number">
+                    04
+                </span>
+
+                <div class="workflow-line"></div>
+
+                <h3>
+                    FUSE
+                </h3>
+
+                <p>
+                    Combine forensic signals using the AI engine.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+                <span class="workflow-number">
+                    05
+                </span>
+
+                <div class="workflow-line"></div>
+
+                <h3>
+                    REPORT
+                </h3>
+
+                <p>
+                    Present evidence, findings and confidence indicators.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SECURITY SECTION
+         ===================================================== -->
+
+    <section class="security-section">
+
+        <div class="security-panel">
+
+            <div class="security-visual">
+
+                <div class="security-ring ring-one"></div>
+                <div class="security-ring ring-two"></div>
+                <div class="security-ring ring-three"></div>
+
+                <div class="security-core">
+                    FAI
+                </div>
+
+            </div>
+
+
+            <div class="security-content">
+
+                <span class="section-eyebrow">
+                    DIGITAL FORENSICS / SECURE ENVIRONMENT
+                </span>
+
+                <h2>
+                    BUILT FOR
+                    <span>INVESTIGATION.</span>
+                </h2>
+
+                <p>
+                    Forensic AI is designed around traceable
+                    analysis stages. Instead of relying on a
+                    single indicator, the platform combines
+                    multiple sources of evidence to produce a
+                    more informative document assessment.
+                </p>
+
+
+                <div class="security-points">
+
+                    <div>
+                        <span>◆</span>
+                        <strong>
+                            MULTI-SIGNAL ANALYSIS
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>◆</span>
+                        <strong>
+                            REFERENCE TEMPLATE COMPARISON
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>◆</span>
+                        <strong>
+                            EXPLAINABLE FORENSIC FINDINGS
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>◆</span>
+                        <strong>
+                            STRUCTURED INVESTIGATION REPORTS
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CTA
+         ===================================================== -->
+
+    <section class="landing-cta">
+
+        <div class="cta-grid"></div>
+
+        <span class="section-eyebrow">
+            FORENSIC AI CORE / READY
+        </span>
+
+        <h2>
+            READY TO START
+            <span>AN INVESTIGATION?</span>
+        </h2>
+
+        <p>
+            Upload a document and let the forensic pipeline
+            inspect its structure, text, visual signals and
+            available metadata.
+        </p>
+
+        <a
+            href="{{ url_for('new_investigation') }}"
+            class="forensic-btn forensic-btn-primary">
+
+            START DOCUMENT INVESTIGATION
+
+            <span class="btn-arrow">
+                →
+            </span>
+
+        </a>
+
+    </section>
+
+</div>
+
+{% endblock %}

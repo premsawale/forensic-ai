@@ -1,0 +1,189 @@
+/* =========================================================
+   FORENSIC AI — STATUS BADGES
+   ========================================================= */
+
+.forensic-status-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    min-height: 26px;
+
+    padding: 5px 9px;
+
+    border: 1px solid var(--border);
+
+    background: var(--panel);
+
+    font-family: var(--font-mono);
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 0.07em;
+
+    white-space: nowrap;
+}
+
+
+/* ---------------------------------------------------------
+   DOT
+   --------------------------------------------------------- */
+
+.badge-status-dot {
+    width: 6px;
+    height: 6px;
+
+    flex: 0 0 6px;
+
+    border-radius: 50%;
+
+    background: var(--text-muted);
+}
+
+
+/* ---------------------------------------------------------
+   AUTHENTIC
+   --------------------------------------------------------- */
+
+.status-authentic,
+.status-verified {
+    color: var(--success);
+
+    border-color: var(--success-dark);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(53, 227, 154, 0.08),
+            rgba(53, 227, 154, 0.025)
+        );
+}
+
+.status-authentic .badge-status-dot,
+.status-verified .badge-status-dot {
+    background: var(--success);
+
+    box-shadow:
+        0 0 8px rgba(53, 227, 154, 0.75);
+}
+
+
+/* ---------------------------------------------------------
+   SUSPICIOUS
+   --------------------------------------------------------- */
+
+.status-suspicious,
+.status-pending {
+    color: var(--warning);
+
+    border-color: var(--warning-dark);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 189, 74, 0.08),
+            rgba(255, 189, 74, 0.025)
+        );
+}
+
+.status-suspicious .badge-status-dot,
+.status-pending .badge-status-dot {
+    background: var(--warning);
+
+    box-shadow:
+        0 0 8px rgba(255, 189, 74, 0.7);
+
+    animation: statusBlink 1.8s ease-in-out infinite;
+}
+
+
+/* ---------------------------------------------------------
+   FORGED
+   --------------------------------------------------------- */
+
+.status-forged,
+.status-failed {
+    color: var(--danger);
+
+    border-color: var(--danger-dark);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 92, 112, 0.08),
+            rgba(255, 92, 112, 0.025)
+        );
+}
+
+.status-forged .badge-status-dot,
+.status-failed .badge-status-dot {
+    background: var(--danger);
+
+    box-shadow:
+        0 0 8px rgba(255, 92, 112, 0.75);
+}
+
+
+/* ---------------------------------------------------------
+   PROCESSING
+   --------------------------------------------------------- */
+
+.status-processing {
+    color: var(--cyan);
+
+    border-color: var(--cyan-dark);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(37, 217, 255, 0.08),
+            rgba(37, 217, 255, 0.025)
+        );
+}
+
+.status-processing .badge-status-dot {
+    background: var(--cyan);
+
+    box-shadow:
+        0 0 8px rgba(37, 217, 255, 0.8);
+
+    animation: statusBlink 0.9s ease-in-out infinite;
+}
+
+
+/* ---------------------------------------------------------
+   UNKNOWN
+   --------------------------------------------------------- */
+
+.status-unknown {
+    color: var(--text-muted);
+
+    border-color: var(--border);
+}
+
+.status-unknown .badge-status-dot {
+    background: var(--text-muted);
+}
+
+
+/* ---------------------------------------------------------
+   SMALL VERSION
+   --------------------------------------------------------- */
+
+.forensic-status-badge.badge-small {
+    min-height: 22px;
+
+    padding: 3px 7px;
+
+    font-size: 8px;
+}
+
+.badge-small .badge-status-dot {
+    width: 5px;
+    height: 5px;
+
+    flex-basis: 5px;
+}

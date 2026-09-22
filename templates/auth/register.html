@@ -1,0 +1,334 @@
+{% extends "base.html" %}
+
+{% block title %}Register | Forensic AI{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/pages/auth.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<section class="auth-page">
+
+    <div class="auth-shell">
+
+        <!-- LEFT PANEL -->
+
+        <div class="auth-visual">
+
+            <div class="auth-grid"></div>
+
+            <div class="auth-visual-content">
+
+                <div class="forensic-chip">
+                    <span class="status-dot"></span>
+                    INVESTIGATOR REGISTRATION
+                </div>
+
+                <h1>
+                    Build.<br>
+                    <span>Investigate. Verify.</span>
+                </h1>
+
+                <p>
+                    Create your secure workspace for AI-powered
+                    document forensic investigations.
+                </p>
+
+                <div class="register-stats">
+
+                    <div>
+                        <strong>06</strong>
+                        <span>Document Types</span>
+                    </div>
+
+                    <div>
+                        <strong>06</strong>
+                        <span>Forensic Modules</span>
+                    </div>
+
+                    <div>
+                        <strong>01</strong>
+                        <span>Unified Engine</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="auth-visual-footer">
+                <span>FAI CORE v1.0.0</span>
+                <span>SECURE REGISTRATION</span>
+            </div>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <div class="auth-form-panel">
+
+            <div class="auth-form-container register-container">
+
+                <div class="mobile-brand">
+                    <span class="brand-mark">FAI</span>
+                    <span>FORENSIC AI</span>
+                </div>
+
+                <div class="auth-heading">
+
+                    <span class="technical-label">
+                        CREATE ACCOUNT
+                    </span>
+
+                    <h2>Start investigating</h2>
+
+                    <p>
+                        Create your investigator account to access
+                        the forensic analysis platform.
+                    </p>
+
+                </div>
+
+
+                <form class="auth-form"
+                      id="registerForm"
+                      method="POST"
+                      action="#">
+
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            FULL NAME
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">◇</span>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            EMAIL ADDRESS
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">@</span>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="investigator@example.com"
+                                autocomplete="email"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="password">
+                                PASSWORD
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <span class="input-icon">◆</span>
+
+                                <input
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    placeholder="Create password"
+                                    autocomplete="new-password"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="confirm_password">
+                                CONFIRM PASSWORD
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <span class="input-icon">◆</span>
+
+                                <input
+                                    type="password"
+                                    id="confirm_password"
+                                    name="confirm_password"
+                                    placeholder="Confirm password"
+                                    autocomplete="new-password"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="password-strength">
+
+                        <div class="strength-header">
+                            <span>PASSWORD STRENGTH</span>
+                            <span id="strengthText">
+                                NOT CHECKED
+                            </span>
+                        </div>
+
+                        <div class="strength-bar">
+                            <span id="strengthFill"></span>
+                        </div>
+
+                    </div>
+
+
+                    <label class="checkbox-label terms-checkbox">
+
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            name="terms"
+                            required>
+
+                        <span class="custom-checkbox"></span>
+
+                        <span>
+                            I agree to the platform's
+                            <a href="#" class="form-link">
+                                security and usage policy
+                            </a>.
+                        </span>
+
+                    </label>
+
+
+                    <button type="submit"
+                            class="btn btn-primary auth-submit">
+
+                        <span>CREATE ACCOUNT</span>
+
+                        <span class="btn-arrow">→</span>
+
+                    </button>
+
+                </form>
+
+
+                <div class="auth-register">
+
+                    <span>Already have an account?</span>
+
+                    <a href="{{ url_for('login') }}">
+                        Sign in
+                    </a>
+
+                </div>
+
+
+                <div class="auth-security-note">
+
+                    <span>⌁</span>
+
+                    <p>
+                        Account credentials are securely processed
+                        by the authentication layer.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const password =
+        document.getElementById("password");
+
+    const strengthFill =
+        document.getElementById("strengthFill");
+
+    const strengthText =
+        document.getElementById("strengthText");
+
+
+    if (!password) return;
+
+
+    password.addEventListener("input", function () {
+
+        const value = password.value;
+
+        let score = 0;
+
+        if (value.length >= 8) score++;
+        if (/[A-Z]/.test(value)) score++;
+        if (/[a-z]/.test(value)) score++;
+        if (/[0-9]/.test(value)) score++;
+        if (/[^A-Za-z0-9]/.test(value)) score++;
+
+
+        const levels = [
+            ["NOT CHECKED", "0%"],
+            ["WEAK", "20%"],
+            ["FAIR", "40%"],
+            ["GOOD", "60%"],
+            ["STRONG", "80%"],
+            ["VERY STRONG", "100%"]
+        ];
+
+
+        const result = levels[score];
+
+        strengthText.textContent = result[0];
+        strengthFill.style.width = result[1];
+
+    });
+
+});
+
+</script>
+
+{% endblock %}

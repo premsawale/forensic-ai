@@ -1,0 +1,244 @@
+{% extends "base.html" %}
+
+{% block title %}Verify OTP | Forensic AI{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/pages/auth.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<section class="auth-page auth-simple">
+
+    <div class="auth-simple-card otp-card">
+
+        <div class="auth-logo">
+            <span>FAI</span>
+        </div>
+
+        <span class="technical-label">
+            IDENTITY VERIFICATION
+        </span>
+
+        <h2>Verify your account</h2>
+
+        <p>
+            Enter the 6-digit verification code sent to
+            your registered email address.
+        </p>
+
+
+        <form class="auth-form"
+              id="otpForm"
+              method="POST"
+              action="#">
+
+            <div class="otp-inputs">
+
+                <input type="text"
+                       maxlength="1"
+                       inputmode="numeric"
+                       class="otp-input"
+                       autofocus>
+
+                <input type="text"
+                       maxlength="1"
+                       inputmode="numeric"
+                       class="otp-input">
+
+                <input type="text"
+                       maxlength="1"
+                       inputmode="numeric"
+                       class="otp-input">
+
+                <input type="text"
+                       maxlength="1"
+                       inputmode="numeric"
+                       class="otp-input">
+
+                <input type="text"
+                       maxlength="1"
+                       inputmode="numeric"
+                       class="otp-input">
+
+                <input type="text"
+                       maxlength="1"
+                       inputmode="numeric"
+                       class="otp-input">
+
+            </div>
+
+
+            <input type="hidden"
+                   name="otp"
+                   id="otpValue">
+
+
+            <button type="submit"
+                    class="btn btn-primary auth-submit">
+
+                <span>VERIFY CODE</span>
+
+                <span class="btn-arrow">→</span>
+
+            </button>
+
+        </form>
+
+
+        <div class="otp-resend">
+
+            <span>Didn't receive the code?</span>
+
+            <button type="button"
+                    id="resendOtp">
+                RESEND CODE
+            </button>
+
+        </div>
+
+
+        <div class="otp-timer"
+             id="otpTimer">
+            CODE EXPIRES IN 02:00
+        </div>
+
+
+        <div class="back-login">
+
+            <a href="{{ url_for('login') }}">
+                ← Return to login
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const inputs =
+        document.querySelectorAll(".otp-input");
+
+    const hidden =
+        document.getElementById("otpValue");
+
+    const form =
+        document.getElementById("otpForm");
+
+    inputs.forEach((input, index) => {
+
+        input.addEventListener("input", function () {
+
+            this.value =
+                this.value.replace(/\D/g, "");
+
+            if (this.value && index < inputs.length - 1) {
+                inputs[index + 1].focus();
+            }
+
+            updateOTP();
+
+        });
+
+
+        input.addEventListener("keydown", function (event) {
+
+            if (
+                event.key === "Backspace" &&
+                !this.value &&
+                index > 0
+            ) {
+                inputs[index - 1].focus();
+            }
+
+        });
+
+    });
+
+
+    function updateOTP() {
+
+        let otp = "";
+
+        inputs.forEach(input => {
+            otp += input.value;
+        });
+
+        hidden.value = otp;
+
+    }
+
+
+    form.addEventListener("submit", function () {
+
+        updateOTP();
+
+    });
+
+
+    /* TIMER */
+
+    let seconds = 120;
+
+    const timer =
+        document.getElementById("otpTimer");
+
+    const interval =
+        setInterval(function () {
+
+            const minutes =
+                Math.floor(seconds / 60);
+
+            const remaining =
+                seconds % 60;
+
+            timer.textContent =
+                "CODE EXPIRES IN " +
+                String(minutes).padStart(2, "0") +
+                ":" +
+                String(remaining).padStart(2, "0");
+
+
+            if (seconds <= 0) {
+
+                clearInterval(interval);
+
+                timer.textContent =
+                    "CODE EXPIRED";
+
+            }
+
+            seconds--;
+
+        }, 1000);
+
+
+    document
+        .getElementById("resendOtp")
+        .addEventListener("click", function () {
+
+            seconds = 120;
+
+            timer.textContent =
+                "CODE EXPIRES IN 02:00";
+
+        });
+
+});
+
+</script>
+
+{% endblock %}

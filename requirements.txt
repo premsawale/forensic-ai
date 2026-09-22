@@ -1,0 +1,11 @@
+Flask
+Werkzeug
+Pillow
+opencv-python
+numpy
+pandas
+scikit-learn
+pytesseract
+PyMuPDF
+reportlab
+python-dotenv

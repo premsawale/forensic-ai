@@ -1,0 +1,303 @@
+/* =========================================================
+   FORENSIC AI — GLOBAL DESIGN VARIABLES
+   Cybersecurity + Digital Forensics Theme
+   ========================================================= */
+
+:root {
+
+    /* =====================================================
+       CORE BACKGROUND COLORS
+       ===================================================== */
+
+    --bg-primary: #05070D;
+    --bg-secondary: #080C14;
+    --bg-tertiary: #0B111C;
+
+    --panel: #0B111C;
+    --panel-light: #111927;
+    --panel-hover: #152132;
+
+    /* =====================================================
+       FORENSIC GRID / BORDER COLORS
+       ===================================================== */
+
+    --border: #1A2A3C;
+    --border-light: #24384D;
+    --border-active: #31516B;
+
+    --grid-color: rgba(37, 217, 255, 0.055);
+
+    /* =====================================================
+       PRIMARY DIGITAL COLORS
+       ===================================================== */
+
+    --cyan: #25D9FF;
+    --cyan-light: #66E7FF;
+    --cyan-dark: #08A9CC;
+
+    --blue: #4F7CFF;
+    --blue-light: #7397FF;
+    --blue-dark: #3158D8;
+
+    /* =====================================================
+       FORENSIC STATUS COLORS
+       ===================================================== */
+
+    /* Authentic / Safe */
+
+    --success: #35E39A;
+    --success-dark: #1FAF72;
+    --success-bg: rgba(53, 227, 154, 0.10);
+
+
+    /* Suspicious / Warning */
+
+    --warning: #FFBD4A;
+    --warning-dark: #D9901D;
+    --warning-bg: rgba(255, 189, 74, 0.10);
+
+
+    /* Forged / Critical */
+
+    --danger: #FF5C70;
+    --danger-dark: #D83C50;
+    --danger-bg: rgba(255, 92, 112, 0.10);
+
+
+    /* Informational */
+
+    --info: #5EB8FF;
+    --info-bg: rgba(94, 184, 255, 0.10);
+
+
+    /* =====================================================
+       TEXT COLORS
+       ===================================================== */
+
+    --text-primary: #E7F1FB;
+    --text-secondary: #B2C0D0;
+    --text-muted: #8193A8;
+    --text-disabled: #536274;
+
+    --text-cyan: var(--cyan);
+
+
+    /* =====================================================
+       TYPOGRAPHY
+       ===================================================== */
+
+    --font-primary: "Inter", sans-serif;
+
+    --font-mono: "JetBrains Mono",
+                 "Fira Code",
+                 "Consolas",
+                 monospace;
+
+
+    /* =====================================================
+       FONT WEIGHTS
+       ===================================================== */
+
+    --weight-light: 300;
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    --weight-extrabold: 800;
+
+
+    /* =====================================================
+       FONT SIZES
+       ===================================================== */
+
+    --text-xs: 0.70rem;
+    --text-sm: 0.80rem;
+    --text-base: 0.95rem;
+    --text-md: 1rem;
+    --text-lg: 1.15rem;
+    --text-xl: 1.35rem;
+    --text-2xl: 1.65rem;
+    --text-3xl: 2rem;
+    --text-4xl: 2.75rem;
+    --text-5xl: 3.5rem;
+
+
+    /* =====================================================
+       SPACING SYSTEM
+       ===================================================== */
+
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+
+
+    /* =====================================================
+       BORDER RADIUS
+       ===================================================== */
+
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-2xl: 20px;
+
+    --radius-pill: 999px;
+
+
+    /* =====================================================
+       NAVIGATION DIMENSIONS
+       ===================================================== */
+
+    --navbar-height: 68px;
+    --sidebar-width: 250px;
+    --sidebar-collapsed-width: 72px;
+
+
+    /* =====================================================
+       SHADOWS
+       ===================================================== */
+
+    --shadow-sm:
+        0 2px 8px rgba(0, 0, 0, 0.25);
+
+    --shadow-md:
+        0 8px 24px rgba(0, 0, 0, 0.35);
+
+    --shadow-lg:
+        0 16px 45px rgba(0, 0, 0, 0.45);
+
+
+    /* =====================================================
+       CYBER GLOW EFFECTS
+       ===================================================== */
+
+    --glow-cyan:
+        0 0 10px rgba(37, 217, 255, 0.25),
+        0 0 30px rgba(37, 217, 255, 0.08);
+
+    --glow-blue:
+        0 0 10px rgba(79, 124, 255, 0.25),
+        0 0 30px rgba(79, 124, 255, 0.08);
+
+    --glow-success:
+        0 0 10px rgba(53, 227, 154, 0.25);
+
+    --glow-warning:
+        0 0 10px rgba(255, 189, 74, 0.25);
+
+    --glow-danger:
+        0 0 10px rgba(255, 92, 112, 0.25);
+
+
+    /* =====================================================
+       TRANSITIONS
+       ===================================================== */
+
+    --transition-fast:
+        150ms ease;
+
+    --transition-normal:
+        250ms ease;
+
+    --transition-slow:
+        400ms ease;
+
+
+    /* =====================================================
+       Z-INDEX SYSTEM
+       ===================================================== */
+
+    --z-background: 0;
+    --z-content: 10;
+    --z-navbar: 100;
+    --z-sidebar: 200;
+    --z-dropdown: 300;
+    --z-modal: 500;
+    --z-loading: 1000;
+
+
+    /* =====================================================
+       FORENSIC SCORE LEVELS
+       ===================================================== */
+
+    --score-authentic: var(--success);
+    --score-suspicious: var(--warning);
+    --score-forged: var(--danger);
+
+
+    /* =====================================================
+       DOCUMENT ANALYSIS COLORS
+       ===================================================== */
+
+    --analysis-ela: #25D9FF;
+    --analysis-ocr: #4F7CFF;
+    --analysis-layout: #A875FF;
+    --analysis-visual: #FF7A59;
+    --analysis-metadata: #35E39A;
+    --analysis-consistency: #FFBD4A;
+
+
+    /* =====================================================
+       SCROLLBAR
+       ===================================================== */
+
+    --scrollbar-track: #070B12;
+    --scrollbar-thumb: #203247;
+    --scrollbar-thumb-hover: #2D4A63;
+
+
+    /* =====================================================
+       OVERLAY COLORS
+       ===================================================== */
+
+    --overlay-dark:
+        rgba(5, 7, 13, 0.82);
+
+    --overlay-panel:
+        rgba(11, 17, 28, 0.88);
+
+
+    /* =====================================================
+       ANIMATION SETTINGS
+       ===================================================== */
+
+    --animation-fast: 0.2s;
+    --animation-normal: 0.4s;
+    --animation-slow: 0.8s;
+
+}
+
+/* =========================================================
+   LIGHT THEME
+   ========================================================= */
+
+[data-theme="light"] {
+
+    --bg-primary: #F4F7FA;
+    --bg-secondary: #EDF2F7;
+    --bg-tertiary: #E5EBF2;
+
+    --panel: #FFFFFF;
+    --panel-light: #F8FAFC;
+    --panel-hover: #EEF4F8;
+
+    --border: #D5DFE8;
+    --border-light: #C5D2DE;
+    --border-active: #9EB7C8;
+
+    --text-primary: #14202B;
+    --text-secondary: #415366;
+    --text-muted: #65798C;
+    --text-disabled: #9BAAB8;
+
+    --grid-color:
+        rgba(8, 169, 204, 0.07);
+
+}

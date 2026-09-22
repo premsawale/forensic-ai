@@ -1,0 +1,1 @@
+# Embedded image and artifact analysis.

@@ -1,0 +1,738 @@
+/* =========================================================
+   FORENSIC AI — GLOBAL ANIMATION SYSTEM
+   Professional Digital Forensics Interface
+   ========================================================= */
+
+
+/* =========================================================
+   1. CORE KEYFRAMES
+   ========================================================= */
+
+/* Simple fade */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* Fade + move upward */
+
+@keyframes fadeInUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* Fade + move downward */
+
+@keyframes fadeInDown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* Fade from left */
+
+@keyframes fadeInLeft {
+
+    from {
+        opacity: 0;
+        transform: translateX(-18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* Fade from right */
+
+@keyframes fadeInRight {
+
+    from {
+        opacity: 0;
+        transform: translateX(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* =========================================================
+   2. FORENSIC SCANNING EFFECT
+   ========================================================= */
+
+@keyframes forensicScan {
+
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+}
+
+
+/* Horizontal scanning beam */
+
+@keyframes scanBeam {
+
+    0% {
+        transform: translateY(-120%);
+    }
+
+    100% {
+        transform: translateY(120%);
+    }
+
+}
+
+
+/* =========================================================
+   3. SYSTEM PULSE
+   ========================================================= */
+
+@keyframes systemPulse {
+
+    0% {
+        opacity: 1;
+        box-shadow:
+            0 0 0 0 rgba(53, 227, 154, 0.45);
+    }
+
+    70% {
+        opacity: 0.8;
+        box-shadow:
+            0 0 0 8px rgba(53, 227, 154, 0);
+    }
+
+    100% {
+        opacity: 1;
+        box-shadow:
+            0 0 0 0 rgba(53, 227, 154, 0);
+    }
+
+}
+
+
+/* Cyan pulse */
+
+@keyframes cyanPulse {
+
+    0%,
+    100% {
+        opacity: 0.65;
+        box-shadow:
+            0 0 5px rgba(37, 217, 255, 0.25);
+    }
+
+    50% {
+        opacity: 1;
+        box-shadow:
+            0 0 15px rgba(37, 217, 255, 0.55);
+    }
+
+}
+
+
+/* =========================================================
+   4. GLOW EFFECT
+   ========================================================= */
+
+@keyframes softGlow {
+
+    0%,
+    100% {
+        opacity: 0.55;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   5. BORDER ACTIVITY
+   ========================================================= */
+
+@keyframes borderPulse {
+
+    0%,
+    100% {
+        border-color: var(--border);
+    }
+
+    50% {
+        border-color: rgba(37, 217, 255, 0.55);
+    }
+
+}
+
+
+/* =========================================================
+   6. PROCESSING SPINNER
+   ========================================================= */
+
+@keyframes forensicSpinner {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   7. ROTATING FORENSIC RING
+   ========================================================= */
+
+@keyframes rotateRing {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   8. DATA STREAM
+   ========================================================= */
+
+@keyframes dataFlow {
+
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+
+}
+
+
+/* =========================================================
+   9. PROGRESS BAR
+   ========================================================= */
+
+@keyframes progressPulse {
+
+    0% {
+        opacity: 0.65;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.65;
+    }
+
+}
+
+
+/* =========================================================
+   10. DOCUMENT SCAN
+   ========================================================= */
+
+@keyframes documentScan {
+
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================================
+   11. BLINKING CURSOR
+   ========================================================= */
+
+@keyframes cursorBlink {
+
+    0%,
+    45% {
+        opacity: 1;
+    }
+
+    46%,
+    100% {
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================================
+   12. STATUS INDICATOR
+   ========================================================= */
+
+@keyframes statusBlink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.35;
+    }
+
+}
+
+
+/* =========================================================
+   13. FLOATING EFFECT
+   ========================================================= */
+
+@keyframes subtleFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+}
+
+
+/* =========================================================
+   14. SCALE IN
+   ========================================================= */
+
+@keyframes scaleIn {
+
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   15. SKELETON LOADING
+   ========================================================= */
+
+@keyframes skeletonLoading {
+
+    0% {
+        background-position: -400px 0;
+    }
+
+    100% {
+        background-position: 400px 0;
+    }
+
+}
+
+
+/* =========================================================
+   16. UTILITY ANIMATION CLASSES
+   ========================================================= */
+
+.animate-fade {
+    animation:
+        fadeIn var(--animation-normal) ease forwards;
+}
+
+
+.animate-fade-up {
+    animation:
+        fadeInUp var(--animation-normal) ease forwards;
+}
+
+
+.animate-fade-down {
+    animation:
+        fadeInDown var(--animation-normal) ease forwards;
+}
+
+
+.animate-fade-left {
+    animation:
+        fadeInLeft var(--animation-normal) ease forwards;
+}
+
+
+.animate-fade-right {
+    animation:
+        fadeInRight var(--animation-normal) ease forwards;
+}
+
+
+.animate-scale {
+    animation:
+        scaleIn var(--animation-normal) ease forwards;
+}
+
+
+.animate-float {
+    animation:
+        subtleFloat 4s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   17. FORENSIC ANIMATION CLASSES
+   ========================================================= */
+
+.forensic-pulse {
+    animation:
+        cyanPulse 2s ease-in-out infinite;
+}
+
+
+.system-pulse {
+    animation:
+        systemPulse 2s ease-in-out infinite;
+}
+
+
+.border-pulse {
+    animation:
+        borderPulse 2.5s ease-in-out infinite;
+}
+
+
+.soft-glow {
+    animation:
+        softGlow 3s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   18. SCANNING ELEMENT
+   ========================================================= */
+
+.scan-animation {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.scan-animation::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    top: -100%;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--cyan),
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px rgba(37, 217, 255, 0.65);
+
+    animation:
+        documentScan 2.5s linear infinite;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   19. SYSTEM STATUS DOT
+   ========================================================= */
+
+.status-dot {
+
+    width: 7px;
+    height: 7px;
+
+    display: inline-block;
+
+    border-radius: 50%;
+
+    background: var(--success);
+
+    box-shadow:
+        0 0 8px rgba(53, 227, 154, 0.65);
+
+}
+
+
+.status-dot.active {
+    animation:
+        systemPulse 2s infinite;
+}
+
+
+.status-dot.warning {
+
+    background: var(--warning);
+
+    box-shadow:
+        0 0 8px rgba(255, 189, 74, 0.65);
+
+}
+
+
+.status-dot.danger {
+
+    background: var(--danger);
+
+    box-shadow:
+        0 0 8px rgba(255, 92, 112, 0.65);
+
+}
+
+
+/* =========================================================
+   20. FORENSIC LOADING RING
+   ========================================================= */
+
+.loading-ring {
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    border: 2px solid var(--border);
+
+    border-top-color: var(--cyan);
+
+    animation:
+        forensicSpinner 0.9s linear infinite;
+
+}
+
+
+/* =========================================================
+   21. PROCESSING BAR
+   ========================================================= */
+
+.processing-bar {
+
+    position: relative;
+
+    height: 3px;
+
+    overflow: hidden;
+
+    background: var(--border);
+
+    border-radius: var(--radius-pill);
+}
+
+
+.processing-bar::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 60%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--cyan),
+            transparent
+        );
+
+    animation:
+        dataFlow 1.6s linear infinite;
+
+}
+
+
+/* =========================================================
+   22. TERMINAL CURSOR
+   ========================================================= */
+
+.terminal-cursor {
+
+    display: inline-block;
+
+    width: 7px;
+    height: 14px;
+
+    margin-left: 3px;
+
+    vertical-align: middle;
+
+    background: var(--cyan);
+
+    animation:
+        cursorBlink 1s step-end infinite;
+
+}
+
+
+/* =========================================================
+   23. STAGGERED CONTENT
+   ========================================================= */
+
+.stagger-1 {
+    animation-delay: 100ms;
+}
+
+.stagger-2 {
+    animation-delay: 200ms;
+}
+
+.stagger-3 {
+    animation-delay: 300ms;
+}
+
+.stagger-4 {
+    animation-delay: 400ms;
+}
+
+.stagger-5 {
+    animation-delay: 500ms;
+}
+
+
+/* =========================================================
+   24. HOVER TRANSITION
+   ========================================================= */
+
+.hover-lift {
+
+    transition:
+        transform var(--transition-normal),
+        border-color var(--transition-normal),
+        box-shadow var(--transition-normal);
+
+}
+
+
+.hover-lift:hover {
+
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(37, 217, 255, 0.35);
+
+    box-shadow:
+        var(--shadow-md),
+        var(--glow-cyan);
+
+}
+
+
+/* =========================================================
+   25. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+    }
+
+}

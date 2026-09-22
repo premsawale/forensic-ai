@@ -1,0 +1,911 @@
+{% extends "base.html" %}
+
+{% block title %}
+Forensic AI | Digital Document Forensics
+{% endblock %}
+
+
+<!-- =====================================================
+     LANDING PAGE — NO SIDEBAR
+===================================================== -->
+
+{% block sidebar %}
+{% endblock %}
+
+
+<!-- =====================================================
+     PAGE CSS
+===================================================== -->
+
+{% block styles %}
+
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/pages/landing.css') }}"
+>
+
+{% endblock %}
+
+
+
+{% block body %}
+
+<div class="landing-page">
+
+
+    <!-- =================================================
+         HERO SECTION
+    ================================================== -->
+
+    <section class="hero-section">
+
+        <div class="hero-grid"></div>
+
+        <div class="hero-content">
+
+            <div class="hero-status">
+
+                <span class="status-dot"></span>
+
+                FORENSIC AI ENGINE
+
+                <span>ONLINE</span>
+
+            </div>
+
+
+            <h1>
+                Detect.
+                <span>Analyze.</span>
+                Verify.
+            </h1>
+
+
+            <p class="hero-description">
+
+                A multimodal digital forensics platform for
+                detecting suspicious modifications and verifying
+                academic and official documents using AI-powered
+                forensic analysis.
+
+            </p>
+
+
+            <!-- =================================================
+                 HERO ACTIONS
+                 DIRECT ROUTE — NO #ANCHOR
+            ================================================== -->
+
+            <div class="hero-actions">
+
+                <button
+                    type="button"
+                    class="btn-primary"
+                    id="heroStartInvestigation"
+                    onclick="goToInvestigation()"
+                >
+
+                    <i class="bi bi-fingerprint"></i>
+
+                    Start Investigation
+
+                    <i class="bi bi-arrow-right"></i>
+
+                </button>
+
+
+                <a
+                    href="#capabilities"
+                    class="btn-secondary hero-secondary-btn"
+                >
+
+                    <i class="bi bi-grid-3x3-gap"></i>
+
+                    Explore Capabilities
+
+                </a>
+
+            </div>
+
+
+            <!-- =================================================
+                 SYSTEM INFORMATION
+            ================================================== -->
+
+            <div class="hero-meta">
+
+                <div class="hero-meta-item">
+
+                    <i class="bi bi-shield-check"></i>
+
+                    <span>
+                        Evidence Protection
+                    </span>
+
+                </div>
+
+
+                <div class="hero-meta-item">
+
+                    <i class="bi bi-cpu"></i>
+
+                    <span>
+                        AI-Assisted Analysis
+                    </span>
+
+                </div>
+
+
+                <div class="hero-meta-item">
+
+                    <i class="bi bi-file-earmark-check"></i>
+
+                    <span>
+                        Multi-Document Support
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             FORENSIC CONSOLE
+        ================================================== -->
+
+        <div class="hero-console">
+
+            <div class="console-window">
+
+                <div class="console-header">
+
+                    <div class="console-dots">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                    <div class="console-title">
+
+                        FORENSIC ANALYSIS CORE
+
+                    </div>
+
+                    <div class="console-status">
+
+                        <span class="status-dot"></span>
+
+                        LIVE
+
+                    </div>
+
+                </div>
+
+
+                <div class="console-body">
+
+
+                    <div class="console-line">
+
+                        <span class="console-number">
+                            01
+                        </span>
+
+                        <span class="console-command">
+                            INITIALIZING FORENSIC ENGINE...
+                        </span>
+
+                        <span class="console-ok">
+                            OK
+                        </span>
+
+                    </div>
+
+
+                    <div class="console-line">
+
+                        <span class="console-number">
+                            02
+                        </span>
+
+                        <span class="console-command">
+                            EVIDENCE INTEGRITY MODULE
+                        </span>
+
+                        <span class="console-ok">
+                            READY
+                        </span>
+
+                    </div>
+
+
+                    <div class="console-line">
+
+                        <span class="console-number">
+                            03
+                        </span>
+
+                        <span class="console-command">
+                            ELA ANALYSIS
+                        </span>
+
+                        <span class="console-value">
+                            READY
+                        </span>
+
+                    </div>
+
+
+                    <div class="console-line">
+
+                        <span class="console-number">
+                            04
+                        </span>
+
+                        <span class="console-command">
+                            TRANSFORMER OCR
+                        </span>
+
+                        <span class="console-value">
+                            READY
+                        </span>
+
+                    </div>
+
+
+                    <div class="console-line">
+
+                        <span class="console-number">
+                            05
+                        </span>
+
+                        <span class="console-command">
+                            LAYOUT VERIFICATION
+                        </span>
+
+                        <span class="console-value">
+                            READY
+                        </span>
+
+                    </div>
+
+
+                    <div class="console-line">
+
+                        <span class="console-number">
+                            06
+                        </span>
+
+                        <span class="console-command">
+                            METADATA AUDIT
+                        </span>
+
+                        <span class="console-value">
+                            READY
+                        </span>
+
+                    </div>
+
+
+                    <div class="console-line">
+
+                        <span class="console-number">
+                            07
+                        </span>
+
+                        <span class="console-command">
+                            MULTIMODAL AI ENGINE
+                        </span>
+
+                        <span class="console-ok">
+                            ONLINE
+                        </span>
+
+                    </div>
+
+
+                    <div class="console-divider"></div>
+
+
+                    <div class="console-result">
+
+                        <div class="result-label">
+                            SYSTEM STATUS
+                        </div>
+
+                        <div class="result-value">
+                            ANALYSIS READY
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         CAPABILITIES
+    ================================================== -->
+
+    <section
+        class="capabilities-section"
+        id="capabilities"
+    >
+
+        <div class="section-heading">
+
+            <div class="section-eyebrow">
+                FORENSIC CAPABILITIES
+            </div>
+
+            <h2>
+                Multimodal Evidence Analysis
+            </h2>
+
+            <p>
+                Multiple forensic signals are combined to
+                provide a structured assessment of uploaded
+                documents.
+            </p>
+
+        </div>
+
+
+        <div class="capability-grid">
+
+
+            <div class="capability-card">
+
+                <div class="capability-number">
+                    01
+                </div>
+
+                <div class="capability-icon">
+                    <i class="bi bi-image"></i>
+                </div>
+
+                <h3>
+                    Error Level Analysis
+                </h3>
+
+                <p>
+                    Examine JPEG recompression and localized
+                    image-level inconsistencies that may indicate
+                    regions requiring further investigation.
+                </p>
+
+                <span class="capability-tag">
+                    ELA
+                </span>
+
+            </div>
+
+
+
+            <div class="capability-card">
+
+                <div class="capability-number">
+                    02
+                </div>
+
+                <div class="capability-icon">
+                    <i class="bi bi-fonts"></i>
+                </div>
+
+                <h3>
+                    Transformer OCR
+                </h3>
+
+                <p>
+                    Extract document text and identify important
+                    fields for downstream validation and
+                    consistency analysis.
+                </p>
+
+                <span class="capability-tag">
+                    OCR
+                </span>
+
+            </div>
+
+
+
+            <div class="capability-card">
+
+                <div class="capability-number">
+                    03
+                </div>
+
+                <div class="capability-icon">
+                    <i class="bi bi-grid-3x3"></i>
+                </div>
+
+                <h3>
+                    Layout Verification
+                </h3>
+
+                <p>
+                    Compare document structure, field placement,
+                    alignment and reference templates.
+                </p>
+
+                <span class="capability-tag">
+                    LAYOUT
+                </span>
+
+            </div>
+
+
+
+            <div class="capability-card">
+
+                <div class="capability-number">
+                    04
+                </div>
+
+                <div class="capability-icon">
+                    <i class="bi bi-eye"></i>
+                </div>
+
+                <h3>
+                    Visual Analysis
+                </h3>
+
+                <p>
+                    Inspect visual characteristics such as
+                    fonts, images, regions and possible
+                    manipulation artifacts.
+                </p>
+
+                <span class="capability-tag">
+                    VISUAL
+                </span>
+
+            </div>
+
+
+
+            <div class="capability-card">
+
+                <div class="capability-number">
+                    05
+                </div>
+
+                <div class="capability-icon">
+                    <i class="bi bi-database"></i>
+                </div>
+
+                <h3>
+                    Metadata Audit
+                </h3>
+
+                <p>
+                    Examine available file metadata and document
+                    properties as supporting forensic evidence.
+                </p>
+
+                <span class="capability-tag">
+                    METADATA
+                </span>
+
+            </div>
+
+
+
+            <div class="capability-card">
+
+                <div class="capability-number">
+                    06
+                </div>
+
+                <div class="capability-icon">
+                    <i class="bi bi-check2-square"></i>
+                </div>
+
+                <h3>
+                    Consistency Verification
+                </h3>
+
+                <p>
+                    Validate extracted fields, formats,
+                    identifiers and predefined document rules.
+                </p>
+
+                <span class="capability-tag">
+                    CONSISTENCY
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         SUPPORTED DOCUMENTS
+    ================================================== -->
+
+    <section class="documents-section">
+
+        <div class="section-heading">
+
+            <div class="section-eyebrow">
+                SUPPORTED EVIDENCE
+            </div>
+
+            <h2>
+                Document Types
+            </h2>
+
+            <p>
+                Select an investigation type based on the
+                document submitted for examination.
+            </p>
+
+        </div>
+
+
+        <div class="documents-grid">
+
+
+            <div class="document-card">
+
+                <i class="bi bi-file-earmark-text"></i>
+
+                <span>
+                    Bonafide Certificate
+                </span>
+
+            </div>
+
+
+            <div class="document-card">
+
+                <i class="bi bi-file-earmark-bar-graph"></i>
+
+                <span>
+                    Semester Marksheet
+                </span>
+
+            </div>
+
+
+            <div class="document-card">
+
+                <i class="bi bi-receipt"></i>
+
+                <span>
+                    Fee Receipt
+                </span>
+
+            </div>
+
+
+            <div class="document-card">
+
+                <i class="bi bi-file-earmark-text"></i>
+
+                <span>
+                    Leaving Certificate
+                </span>
+
+            </div>
+
+
+            <div class="document-card">
+
+                <i class="bi bi-mortarboard"></i>
+
+                <span>
+                    Diploma / Degree Certificate
+                </span>
+
+            </div>
+
+
+            <div class="document-card">
+
+                <i class="bi bi-file-earmark-medical"></i>
+
+                <span>
+                    Birth Certificate
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         WORKFLOW
+    ================================================== -->
+
+    <section class="workflow-section">
+
+        <div class="section-heading">
+
+            <div class="section-eyebrow">
+                INVESTIGATION WORKFLOW
+            </div>
+
+            <h2>
+                From Evidence to Assessment
+            </h2>
+
+            <p>
+                A structured forensic workflow for document
+                examination.
+            </p>
+
+        </div>
+
+
+        <div class="workflow">
+
+
+            <div class="workflow-step">
+
+                <span>
+                    01
+                </span>
+
+                <i class="bi bi-cloud-arrow-up"></i>
+
+                <h3>
+                    Upload
+                </h3>
+
+                <p>
+                    Submit the document as digital evidence.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-line"></div>
+
+
+            <div class="workflow-step">
+
+                <span>
+                    02
+                </span>
+
+                <i class="bi bi-cpu"></i>
+
+                <h3>
+                    Analyze
+                </h3>
+
+                <p>
+                    Run multiple forensic analysis modules.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-line"></div>
+
+
+            <div class="workflow-step">
+
+                <span>
+                    03
+                </span>
+
+                <i class="bi bi-search"></i>
+
+                <h3>
+                    Verify
+                </h3>
+
+                <p>
+                    Compare extracted evidence with rules
+                    and reference layouts.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-line"></div>
+
+
+            <div class="workflow-step">
+
+                <span>
+                    04
+                </span>
+
+                <i class="bi bi-file-earmark-pdf"></i>
+
+                <h3>
+                    Report
+                </h3>
+
+                <p>
+                    Generate a structured forensic assessment.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         SECURITY SECTION
+    ================================================== -->
+
+    <section class="security-section">
+
+        <div class="security-content">
+
+            <div class="section-eyebrow">
+                DIGITAL EVIDENCE SECURITY
+            </div>
+
+            <h2>
+                Evidence First.
+                Analysis Second.
+            </h2>
+
+            <p>
+                The investigation workflow is designed around
+                preservation of the submitted evidence and
+                analysis using controlled processing copies.
+            </p>
+
+
+            <div class="security-points">
+
+                <div>
+
+                    <i class="bi bi-lock-fill"></i>
+
+                    <span>
+                        Original Evidence Preservation
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <i class="bi bi-fingerprint"></i>
+
+                    <span>
+                        Investigation Tracking
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <i class="bi bi-shield-check"></i>
+
+                    <span>
+                        Structured Forensic Workflow
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         FINAL CTA
+    ================================================== -->
+
+    <section class="final-cta">
+
+        <div class="cta-content">
+
+            <div class="section-eyebrow">
+                READY FOR INVESTIGATION
+            </div>
+
+            <h2>
+                Start a New Forensic Investigation
+            </h2>
+
+            <p>
+                Upload your document and begin the
+                evidence-analysis workflow.
+            </p>
+
+
+            <!-- =================================================
+                 DIRECT BUTTON
+                 NO HASH / NO ANCHOR
+            ================================================== -->
+
+            <button
+                type="button"
+                class="btn-primary cta-button"
+                id="finalStartInvestigation"
+                onclick="goToInvestigation()"
+            >
+
+                <i class="bi bi-fingerprint"></i>
+
+                Start Investigation
+
+                <i class="bi bi-arrow-right"></i>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+</div>
+
+{% endblock %}
+
+
+
+<!-- =====================================================
+     PAGE JAVASCRIPT
+===================================================== -->
+
+{% block scripts %}
+
+<script>
+
+function goToInvestigation() {
+
+    console.log(
+        "Opening New Investigation page..."
+    );
+
+    window.location.assign(
+        "{{ url_for('new_investigation') }}"
+    );
+
+}
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        console.log(
+            "FORENSIC AI landing page initialized."
+        );
+
+        console.log(
+            "New Investigation URL:",
+            "{{ url_for('new_investigation') }}"
+        );
+
+    }
+);
+
+</script>
+
+{% endblock %}P

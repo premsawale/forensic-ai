@@ -1,0 +1,1096 @@
+/* =========================================================
+   FORENSIC AI — COMMAND CENTER SIDEBAR
+   ========================================================= */
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.forensic-sidebar {
+
+    position: fixed;
+
+    top: var(--navbar-height);
+    left: 0;
+    bottom: 0;
+
+    z-index: var(--z-sidebar);
+
+    width: var(--sidebar-width);
+
+    display: flex;
+
+    flex-direction: column;
+
+    background:
+        rgba(8, 12, 20, 0.96);
+
+    border-right:
+        1px solid var(--border);
+
+    transition:
+        width var(--transition-normal),
+        transform var(--transition-normal);
+
+}
+
+
+/* =========================================================
+   SIDEBAR HEADER
+   ========================================================= */
+
+.sidebar-header {
+
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        0 var(--space-4);
+
+    border-bottom:
+        1px solid rgba(26, 42, 60, 0.65);
+
+}
+
+
+.sidebar-section-title {
+
+    font-family: var(--font-mono);
+
+    font-size: 0.62rem;
+
+    font-weight: var(--weight-semibold);
+
+    letter-spacing: 0.12em;
+
+    color: var(--text-muted);
+
+}
+
+
+.sidebar-collapse-btn {
+
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius-sm);
+
+    background:
+        rgba(17, 25, 39, 0.7);
+
+    color: var(--text-muted);
+
+    font-size: 1.2rem;
+
+    transition:
+        color var(--transition-fast),
+        border-color var(--transition-fast),
+        background var(--transition-fast);
+
+}
+
+
+.sidebar-collapse-btn:hover {
+
+    color: var(--cyan);
+
+    border-color:
+        rgba(37, 217, 255, 0.35);
+
+    background:
+        rgba(37, 217, 255, 0.06);
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.sidebar-navigation {
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding:
+        var(--space-4)
+        var(--space-3);
+
+}
+
+
+.sidebar-navigation::-webkit-scrollbar {
+    width: 4px;
+}
+
+
+/* =========================================================
+   SIDEBAR LINK
+   ========================================================= */
+
+.sidebar-link {
+
+    position: relative;
+
+    min-height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--space-3);
+
+    margin-bottom: 4px;
+
+    padding:
+        0 var(--space-3);
+
+    border:
+        1px solid transparent;
+
+    border-radius: var(--radius-md);
+
+    color: var(--text-muted);
+
+    font-size: var(--text-sm);
+
+    font-weight: var(--weight-medium);
+
+    transition:
+        color var(--transition-fast),
+        background var(--transition-fast),
+        border-color var(--transition-fast),
+        transform var(--transition-fast);
+
+}
+
+
+/* Hover */
+
+.sidebar-link:hover {
+
+    color: var(--text-primary);
+
+    background:
+        rgba(37, 217, 255, 0.045);
+
+    border-color:
+        rgba(37, 217, 255, 0.10);
+
+    transform: translateX(2px);
+
+}
+
+
+/* Active */
+
+.sidebar-link.active {
+
+    color: var(--cyan);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(37, 217, 255, 0.10),
+            rgba(37, 217, 255, 0.025)
+        );
+
+    border-color:
+        rgba(37, 217, 255, 0.18);
+
+}
+
+
+/* Active indicator */
+
+.sidebar-link.active::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -1px;
+
+    top: 8px;
+    bottom: 8px;
+
+    width: 2px;
+
+    background: var(--cyan);
+
+    box-shadow:
+        0 0 8px rgba(37, 217, 255, 0.7);
+
+}
+
+
+/* =========================================================
+   SIDEBAR ICON
+   ========================================================= */
+
+.sidebar-icon {
+
+    width: 22px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    font-family: var(--font-mono);
+
+    font-size: 0.9rem;
+
+    color: currentColor;
+
+}
+
+
+.sidebar-link-text {
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+}
+
+
+/* =========================================================
+   NEW BADGE
+   ========================================================= */
+
+.new-badge {
+
+    margin-left: auto;
+
+    padding:
+        2px 5px;
+
+    border:
+        1px solid rgba(37, 217, 255, 0.25);
+
+    border-radius: 3px;
+
+    background:
+        rgba(37, 217, 255, 0.08);
+
+    color: var(--cyan);
+
+    font-family: var(--font-mono);
+
+    font-size: 0.48rem;
+
+    font-weight: var(--weight-bold);
+
+    letter-spacing: 0.06em;
+
+}
+
+
+/* =========================================================
+   SECTION LABEL
+   ========================================================= */
+
+.sidebar-section-label {
+
+    margin:
+        var(--space-5)
+        var(--space-3)
+        var(--space-2);
+
+    font-family: var(--font-mono);
+
+    font-size: 0.55rem;
+
+    font-weight: var(--weight-semibold);
+
+    letter-spacing: 0.12em;
+
+    color: var(--text-disabled);
+
+}
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.sidebar-divider {
+
+    height: 1px;
+
+    margin:
+        var(--space-3)
+        var(--space-2);
+
+    background:
+        var(--border);
+
+}
+
+
+/* =========================================================
+   FORENSIC ANALYSIS INDICATORS
+   ========================================================= */
+
+.analysis-indicator {
+
+    width: 7px;
+    height: 7px;
+
+    flex-shrink: 0;
+
+    border-radius: 2px;
+
+    box-shadow:
+        0 0 7px currentColor;
+
+}
+
+
+/* ELA — Cyan */
+
+.analysis-indicator.ela {
+
+    background: var(--analysis-ela);
+    color: var(--analysis-ela);
+
+}
+
+
+/* OCR — Blue */
+
+.analysis-indicator.ocr {
+
+    background: var(--analysis-ocr);
+    color: var(--analysis-ocr);
+
+}
+
+
+/* Layout — Purple */
+
+.analysis-indicator.layout {
+
+    background: var(--analysis-layout);
+    color: var(--analysis-layout);
+
+}
+
+
+/* Visual — Orange */
+
+.analysis-indicator.visual {
+
+    background: var(--analysis-visual);
+    color: var(--analysis-visual);
+
+}
+
+
+/* Metadata — Green */
+
+.analysis-indicator.metadata {
+
+    background: var(--analysis-metadata);
+    color: var(--analysis-metadata);
+
+}
+
+
+/* Consistency — Amber */
+
+.analysis-indicator.consistency {
+
+    background: var(--analysis-consistency);
+    color: var(--analysis-consistency);
+
+}
+
+
+/* =========================================================
+   SIDEBAR BOTTOM
+   ========================================================= */
+
+.sidebar-bottom {
+
+    padding:
+        var(--space-3);
+
+    border-top:
+        1px solid var(--border);
+
+}
+
+
+/* =========================================================
+   SYSTEM CARD
+   ========================================================= */
+
+.sidebar-system-card {
+
+    padding:
+        var(--space-3);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius-md);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(17, 25, 39, 0.9),
+            rgba(8, 12, 20, 0.9)
+        );
+
+}
+
+
+/* Header */
+
+.system-card-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    font-family: var(--font-mono);
+
+    font-size: 0.55rem;
+
+    font-weight: var(--weight-semibold);
+
+    letter-spacing: 0.08em;
+
+    color: var(--text-muted);
+
+}
+
+
+/* Status */
+
+.system-card-status {
+
+    margin-top: 9px;
+
+    font-family: var(--font-mono);
+
+    font-size: 0.55rem;
+
+    color: var(--success);
+
+}
+
+
+/* Engine */
+
+.system-card-engine {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 10px;
+
+    padding-top: 9px;
+
+    border-top:
+        1px solid var(--border);
+
+    font-family: var(--font-mono);
+
+    font-size: 0.50rem;
+
+    color: var(--text-disabled);
+
+}
+
+
+.system-card-engine strong {
+
+    margin-left: auto;
+
+    color: var(--cyan);
+
+}
+
+
+.engine-line {
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: var(--cyan);
+
+    box-shadow:
+        0 0 7px rgba(37, 217, 255, 0.7);
+
+}
+
+
+/* =========================================================
+   VERSION
+   ========================================================= */
+
+.sidebar-version {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        8px 3px 0;
+
+    font-family: var(--font-mono);
+
+    font-size: 0.48rem;
+
+    color: var(--text-disabled);
+
+}
+
+
+.version-number {
+
+    color: var(--text-muted);
+
+}
+
+
+/* =========================================================
+   COLLAPSED SIDEBAR
+   ========================================================= */
+
+body.sidebar-collapsed .forensic-sidebar {
+
+    width: var(--sidebar-collapsed-width);
+
+}
+
+
+body.sidebar-collapsed .sidebar-section-title,
+body.sidebar-collapsed .sidebar-link-text,
+body.sidebar-collapsed .new-badge,
+body.sidebar-collapsed .sidebar-section-label,
+body.sidebar-collapsed .sidebar-system-card,
+body.sidebar-collapsed .sidebar-version {
+
+    display: none;
+
+}
+
+
+body.sidebar-collapsed .sidebar-header {
+
+    justify-content: center;
+
+}
+
+
+body.sidebar-collapsed .sidebar-navigation {
+
+    padding-left: var(--space-2);
+    padding-right: var(--space-2);
+
+}
+
+
+body.sidebar-collapsed .sidebar-link {
+
+    justify-content: center;
+
+    padding: 0;
+
+}
+
+
+body.sidebar-collapsed .sidebar-link:hover {
+
+    transform: none;
+
+}
+
+
+body.sidebar-collapsed .sidebar-collapse-btn {
+
+    transform: rotate(180deg);
+
+}
+
+
+/* =========================================================
+   TOOLTIP FOR COLLAPSED SIDEBAR
+   ========================================================= */
+
+body.sidebar-collapsed .sidebar-link {
+
+    position: relative;
+
+}
+
+
+body.sidebar-collapsed .sidebar-link:hover::after {
+
+    content: attr(data-tooltip);
+
+    position: absolute;
+
+    left: calc(100% + 10px);
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: var(--z-dropdown);
+
+    padding:
+        7px 10px;
+
+    white-space: nowrap;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius-sm);
+
+    background: var(--panel-light);
+
+    color: var(--text-primary);
+
+    font-family: var(--font-primary);
+
+    font-size: var(--text-xs);
+
+    box-shadow: var(--shadow-md);
+
+}
+
+
+/* =========================================================
+   MOBILE SIDEBAR
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .forensic-sidebar {
+
+        width: var(--sidebar-width);
+
+        transform:
+            translateX(-100%);
+
+        box-shadow:
+            var(--shadow-lg);
+
+    }
+
+
+    body.sidebar-mobile-open .forensic-sidebar {
+
+        transform:
+            translateX(0);
+
+    }
+
+
+    body.sidebar-collapsed .forensic-sidebar {
+
+        width: var(--sidebar-width);
+
+        transform:
+            translateX(-100%);
+
+    }
+
+
+    body.sidebar-mobile-open.sidebar-collapsed
+    .forensic-sidebar {
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+/* =========================================================
+   FORENSIC AI — SIDEBAR / MAIN CONTENT ALIGNMENT FIX
+   ========================================================= */
+
+/* Desktop layout */
+@media (min-width: 769px) {
+
+    /* ---------------------------------------------
+       NORMAL SIDEBAR
+    --------------------------------------------- */
+
+    .application-body {
+        display: flex;
+        align-items: stretch;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .forensic-sidebar {
+        width: 270px;
+        min-width: 270px;
+        flex: 0 0 270px;
+        transition:
+            width 0.3s ease,
+            min-width 0.3s ease,
+            flex-basis 0.3s ease;
+        overflow: hidden;
+    }
+
+    .main-content {
+        flex: 1 1 auto;
+        min-width: 0;
+        width: auto;
+        transition:
+            width 0.3s ease,
+            margin-left 0.3s ease;
+    }
+
+
+    /* ---------------------------------------------
+       COLLAPSED SIDEBAR
+    --------------------------------------------- */
+
+    .forensic-sidebar.collapsed {
+        width: 76px;
+        min-width: 76px;
+        flex-basis: 76px;
+    }
+
+
+    /*
+     * When collapsed, main content automatically
+     * gets the remaining screen width.
+     */
+
+    body.sidebar-collapsed .main-content {
+        flex: 1 1 auto;
+        width: auto;
+        min-width: 0;
+    }
+
+
+    /* ---------------------------------------------
+       COLLAPSED SIDEBAR CONTENT
+    --------------------------------------------- */
+
+    .forensic-sidebar.collapsed
+    .sidebar-section-title,
+
+    .forensic-sidebar.collapsed
+    .sidebar-link-text,
+
+    .forensic-sidebar.collapsed
+    .new-badge,
+
+    .forensic-sidebar.collapsed
+    .sidebar-section-label,
+
+    .forensic-sidebar.collapsed
+    .sidebar-system-card,
+
+    .forensic-sidebar.collapsed
+    .sidebar-version {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+
+    /* ---------------------------------------------
+       CENTER ICONS WHEN COLLAPSED
+    --------------------------------------------- */
+
+    .forensic-sidebar.collapsed
+    .sidebar-link {
+        justify-content: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+
+    .forensic-sidebar.collapsed
+    .sidebar-icon {
+        margin-right: 0;
+    }
+
+
+    .forensic-sidebar.collapsed
+    .analysis-link {
+        justify-content: center;
+    }
+
+
+    /* ---------------------------------------------
+       HEADER WHEN COLLAPSED
+    --------------------------------------------- */
+
+    .forensic-sidebar.collapsed
+    .sidebar-header {
+        justify-content: center;
+    }
+
+
+    /* ---------------------------------------------
+       COLLAPSE BUTTON
+    --------------------------------------------- */
+
+    .sidebar-collapse-btn {
+        flex-shrink: 0;
+    }
+
+}
+
+
+/* =========================================================
+   FORENSIC AI — FINAL SIDEBAR / CONTENT LAYOUT FIX
+   ========================================================= */
+
+/* Desktop only */
+@media (min-width: 769px) {
+
+    /* -----------------------------------------------------
+       APPLICATION BODY
+    ----------------------------------------------------- */
+
+    .application-body {
+        display: flex !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: relative !important;
+    }
+
+
+    /* -----------------------------------------------------
+       SIDEBAR
+    ----------------------------------------------------- */
+
+    .forensic-sidebar {
+        position: relative !important;
+
+        left: auto !important;
+        top: auto !important;
+
+        width: 270px !important;
+        min-width: 270px !important;
+        max-width: 270px !important;
+
+        flex: 0 0 270px !important;
+
+        margin: 0 !important;
+
+        transition:
+            width 0.3s ease,
+            min-width 0.3s ease,
+            max-width 0.3s ease,
+            flex-basis 0.3s ease !important;
+
+        overflow-x: hidden !important;
+    }
+
+
+    /* -----------------------------------------------------
+       COLLAPSED SIDEBAR
+    ----------------------------------------------------- */
+
+    .forensic-sidebar.collapsed {
+
+        width: 76px !important;
+        min-width: 76px !important;
+        max-width: 76px !important;
+
+        flex: 0 0 76px !important;
+    }
+
+
+    /* -----------------------------------------------------
+       MAIN CONTENT
+    ----------------------------------------------------- */
+
+    .main-content {
+
+        position: relative !important;
+
+        left: auto !important;
+
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        width: auto !important;
+        min-width: 0 !important;
+
+        flex: 1 1 auto !important;
+
+        overflow-x: hidden;
+    }
+
+
+    /* -----------------------------------------------------
+       WHEN SIDEBAR IS COLLAPSED
+    ----------------------------------------------------- */
+
+    body.sidebar-collapsed .main-content {
+
+        margin-left: 0 !important;
+
+        width: auto !important;
+
+        flex: 1 1 auto !important;
+    }
+
+
+    /* -----------------------------------------------------
+       PREVENT PAGE FROM BECOMING WIDER THAN SCREEN
+    ----------------------------------------------------- */
+
+    #app,
+    .app-container {
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        overflow-x: hidden !important;
+    }
+
+
+    /* -----------------------------------------------------
+       SIDEBAR HEADER
+    ----------------------------------------------------- */
+
+    .forensic-sidebar .sidebar-header {
+
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+
+    /* -----------------------------------------------------
+       COLLAPSED TEXT
+    ----------------------------------------------------- */
+
+    .forensic-sidebar.collapsed
+    .sidebar-section-title,
+
+    .forensic-sidebar.collapsed
+    .sidebar-link-text,
+
+    .forensic-sidebar.collapsed
+    .new-badge,
+
+    .forensic-sidebar.collapsed
+    .sidebar-section-label,
+
+    .forensic-sidebar.collapsed
+    .sidebar-system-card,
+
+    .forensic-sidebar.collapsed
+    .sidebar-version {
+
+        opacity: 0 !important;
+
+        visibility: hidden !important;
+
+        pointer-events: none !important;
+    }
+
+
+    /* -----------------------------------------------------
+       COLLAPSED NAVIGATION
+    ----------------------------------------------------- */
+
+    .forensic-sidebar.collapsed .sidebar-link {
+
+        justify-content: center !important;
+
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+
+    .forensic-sidebar.collapsed .sidebar-icon {
+
+        margin-right: 0 !important;
+    }
+
+
+    .forensic-sidebar.collapsed .analysis-link {
+
+        justify-content: center !important;
+    }
+
+
+    /* -----------------------------------------------------
+       COLLAPSED HEADER
+    ----------------------------------------------------- */
+
+    .forensic-sidebar.collapsed .sidebar-header {
+
+        justify-content: center !important;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .application-body {
+
+        display: block !important;
+
+        width: 100% !important;
+
+        margin: 0 !important;
+
+        padding: 0 !important;
+    }
+
+
+    .main-content {
+
+        width: 100% !important;
+
+        margin-left: 0 !important;
+
+        min-width: 0 !important;
+    }
+
+}
